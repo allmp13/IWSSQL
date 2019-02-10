@@ -1,0 +1,7 @@
+SELECT
+    O.C_BARRE AS [Code Barre],
+    C.L_REF AS  Reference
+FROM
+    suiteisilog.OBJET O LEFT JOIN [suiteisilog].[CATALOGUE]  C ON C.C_REF=O.C_REF
+WHERE O.C_NATURE='SERVICE' AND O.C_BARRE LIKE 'I%'
+ORDER BY O.C_BARRE
