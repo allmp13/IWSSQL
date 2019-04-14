@@ -1,0 +1,4 @@
+SELECT
+    C_EXTERNE
+FROM
+   suiteisilog.CATALOGUE
