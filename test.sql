@@ -15,4 +15,4 @@ select C_SERVICE,C_SERVICE_PERE,N_SERVICE,C_SERVICEBARRE,* from SERVICE where  (
 
 select * FROM SPECIF_V_OCS_POSTES
 
-select * f
+select * from suiteisilog.OBJET
