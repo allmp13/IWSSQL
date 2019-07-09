@@ -1,0 +1,1 @@
+EXEC sp_serveroption 'B18U096', 'DATA ACCESS', TRUE
