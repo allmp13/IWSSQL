@@ -1,12 +1,12 @@
 EXEC sp_addlinkedserver
-     @server = N'EXCELDATA',
+     @server = N'TESTJMD',
      @srvproduct = N'jm',
      @provider = N'Microsoft.ACE.OLEDB.12.0',
-     @datasrc = N'C:\jmd.xlsx',
+     @datasrc = N'C:\temp\LGME - EQUIPE COMPETENTE GSIC.xlsx',
      @provstr = N'Excel 12.0';
 
    EXEC sp_addlinkedsrvlogin
-   @rmtsrvname = N'EXCELDATA',
+   @rmtsrvname = N'TESTJMD',
    @useself ='false', 
    @locallogin = NULL,
    @rmtuser = NULL,

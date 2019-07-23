@@ -1,3 +1,3 @@
 EXEC sp_dropserver
-   @server = N'EXCELDATA',
+   @server = N'TESTJMD',
    @droplogins ='droplogins';
