@@ -1,8 +1,14 @@
 
 use GENHABLGME
 drop table if EXISTS #metier
- drop table if EXISTS #tmp
+drop table if EXISTS #tmp
 DELETE FROM HABILITATION;
+DELETE FROM HABILITATIONS_TYPE;
+DELETE FROM HABILITATIONS_COMPLEMENTAIRES
+
+delete GENHABLGME.dbo.UTILISATEURS
+
+bulk insert GENHABLGME.dbo.UTILISATEURS from 'c:\temp\EXPORT_RH_UTILISATEURS.csv' WITH (FORMAT='CSV',FIELDTERMINATOR=';',FIRSTROW=2,CODEPAGE='ACP')
 
 Create table #metier( 
  metier varchar(50)
@@ -26,6 +32,7 @@ begin
 set @metier = '''C:\temp\' + @metier +''''
 print @metier
 
+if exists(select * from sys.servers where name='TESTJMD')
 EXEC sp_dropserver
    @server = N'TESTJMD',
    @droplogins ='droplogins';
@@ -49,8 +56,6 @@ EXEC sp_addlinkedsrvlogin
 
 
 fetch moncurseur into @metier
-
-   /*select * from testjmd...matrice$*/
 
  Create table #tmp
  (TABLE_QUALIFIER varchar(40),
@@ -100,9 +105,52 @@ insert dbo.HABILITATION
 EXECUTE(@query2) 
 Drop table #tmp
 
+insert INTO HABILITATIONS_TYPE (
+	   [Libellé habilitation type]
+	  ,[Code Equipe]
+      ,[Libellé Equipe]
+      ,[Code profil]
+      ,[Rôle dans l'équipe]
+      ,[Code Nature]
+      ,[Lecture seule])
 
+select [Libelle Habi Type]
+      ,[Code Equipe]
+      ,[Libelle Equipe]
+      ,[Code Profil]
+      ,[Rôle dans l'équipe]
+      ,[Code Nature]
+      ,[Lecture Seule]
+from TESTJMD...Equipe$
 
 end
+
+INSERT INTO HABILITATIONS_COMPLEMENTAIRES
+    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO], [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel], [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
+SELECT
+    H.Ligne AS [Matricule RH utilisateur],
+    H.Colonne AS [Code habilitation type],
+    HT.[Code profil],
+    U.[Site habilitation principale],
+    U.[UO habilitation principale],
+    U.[Code fonction habilitation principale],
+    U.[Libellé fonction habilitation principale],
+    U.[Code grade],
+    U.[Libellé du grade],
+    U.[Code statut professionnel habilitation principale],
+    U.[Libellé statut professionnel habilitation principale],
+    'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],
+    'A' AS [Type de situation],
+    'Actif' AS [Libellé type de situation],
+    '01/01/2018' AS DateDebut,
+    '31/12/2021' AS Datefin
+FROM
+    HABILITATIONS_TYPE HT
+    INNER JOIN (UTILISATEURS U INNER JOIN HABILITATION H ON U.[Matricule RH] = H.Ligne) 
+    ON HT.[Libellé habilitation type] = H.Colonne
+WHERE H.Valeur IS NOT NULL 
+
 close moncurseur
 deallocate moncurseur
 Drop table #metier
