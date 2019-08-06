@@ -1,10 +1,17 @@
+SET NOCOUNT ON
 DECLARE @Racine_Matrice varchar(255)
 /*Set @Racine_Matrice='\\srvlgme-t\d$\ISILOG\Passerelle RH\TESTJMD\'*/
 SET @Racine_Matrice='C:\TEMP\'
 
-/*DROP TABLE #metier
-    DROP TABLE #tmp*/
+
+
 PRINT 'DEBUT'
+IF  OBJECT_ID('tempdb..#metier') IS NOT NULL DROP TABLE #metier
+IF  OBJECT_ID('tempdb..#tmp') IS NOT NULL DROP TABLE #tmp
+/* Version > 2016
+DROP TABLE #metier
+DROP TABLE #tmp
+*/
 DELETE FROM HABILITATION;
 DELETE FROM HABILITATIONS_TYPE;
 DELETE FROM HABILITATIONS_COMPLEMENTAIRES;
@@ -175,7 +182,8 @@ UNPIVOT(Valeur
         [Libellé Fonction]
     FROM
         TESTJMD...Equipe$
-
+    WHERE [Code Profil] <>'GEST'
+Print 'Sans les Profils Gestionnaire'
 END
 
 /* MAJ GESTIONNAIRES*/
@@ -210,6 +218,7 @@ FROM
     INNER JOIN (UTILISATEURS U INNER JOIN HABILITATION H ON U.[Matricule RH] = H.Ligne)
     ON HT.[Libellé habilitation type] = H.Colonne
 WHERE H.Valeur IS NOT NULL
+AND HT.[Code profil] <>'GEST'
 
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1*/
 
@@ -339,4 +348,4 @@ ORDER BY E.[Matricule RH utilisateur]
 CLOSE moncurseur
 DEALLOCATE moncurseur
 DROP TABLE #metier
-
+PRINT 'FIN'
