@@ -20,10 +20,15 @@ DELETE FROM HABILITATIONS_COMPLEMENTAIRES_EXPORT;
 DELETE GENHABLGME.dbo.UTILISATEURS
 
 /* Import Utilisateurs */
+
 BULK INSERT GENHABLGME.dbo.UTILISATEURS FROM 'c:\temp\EXPORT_RH_UTILISATEURS.csv' WITH (/*FORMAT='CSV',*/FIELDTERMINATOR=';',FIRSTROW=2,CODEPAGE='ACP')
 
+
 /* Import Habilitations Complémentaires */
+/*
 BULK INSERT GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES FROM 'c:\temp\EXPORT RH HABILITATIONS_COMPLEMENTAIRES.csv' WITH (/*FORMAT='CSV',*/FIELDTERMINATOR=';',FIRSTROW=2,CODEPAGE='ACP')
+*/
+PRINT 'PAS D''IMPORT HABILITATIONS COMPLEMENTAIRES'
 
 CREATE TABLE #metier
 (
@@ -183,25 +188,27 @@ UNPIVOT(Valeur
     FROM
         TESTJMD...Equipe$
     WHERE [Code Profil] <>'GEST'
-Print 'Sans les Profils Gestionnaire'
+Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'
+PRINT '------------------------------------------------------'
+
 END
 
 /* MAJ GESTIONNAIRES*/
 
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES
-    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO], [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel], [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
+    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO],/* [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel],*/ [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
 SELECT
     H.Ligne AS [Matricule RH utilisateur],
     H.Colonne AS [Code habilitation type],
     HT.[Code profil],
     U.[Site habilitation principale],
     U.[UO habilitation principale],
-    U.[Code fonction habilitation principale],
+   /* U.[Code fonction habilitation principale],
     U.[Libellé fonction habilitation principale],
     U.[Code grade],
     U.[Libellé du grade],
     U.[Code statut professionnel habilitation principale],
-    U.[Libellé statut professionnel habilitation principale],
+    U.[Libellé statut professionnel habilitation principale],*/
     'S' AS [Code statut d'activité],
     'Situation Secondaire' AS [Libellé statut d'activité],
     'A' AS [Type de situation],
@@ -219,23 +226,24 @@ FROM
     ON HT.[Libellé habilitation type] = H.Colonne
 WHERE H.Valeur IS NOT NULL
 AND HT.[Code profil] <>'GEST'
+Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'
 
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1*/
 
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES
-    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO], [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel], [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
+    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO],/* [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel],*/ [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
 SELECT
     UTILISATEURS.[Matricule RH],
     HABILITATIONS_TYPE.[Libellé habilitation type],
     'RESP_TERRI' AS [Code profil],
     UTILISATEURS.[Site habilitation principale],
     UTILISATEURS.[UO habilitation principale],
-    UTILISATEURS.[Code fonction habilitation principale],
+    /*UTILISATEURS.[Code fonction habilitation principale],
     UTILISATEURS.[Libellé fonction habilitation principale],
     UTILISATEURS.[Code grade],
     UTILISATEURS.[Libellé du grade],
     UTILISATEURS.[Code statut professionnel habilitation principale],
-    UTILISATEURS.[Libellé statut professionnel habilitation principale],
+    UTILISATEURS.[Libellé statut professionnel habilitation principale],*/
     'S' AS [Code statut d'activité],
     'Situation Secondaire' AS [Libellé statut d'activité],
     'A' AS [Type de situation],
@@ -250,19 +258,19 @@ WHERE (((HABILITATIONS_TYPE.[Libellé habilitation type]) LIKE '%Responsable Hier
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 2*/
 
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES
-    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO], [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel], [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
+    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO],/* [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel],*/ [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
 SELECT
     UTILISATEURS.[Matricule RH],
     HABILITATIONS_TYPE.[Libellé habilitation type],
     'RESP_TERRI' AS [Code profil],
     UTILISATEURS.[Site habilitation principale],
     UTILISATEURS.[UO habilitation principale],
-    UTILISATEURS.[Code fonction habilitation principale],
+    /*UTILISATEURS.[Code fonction habilitation principale],
     UTILISATEURS.[Libellé fonction habilitation principale],
     UTILISATEURS.[Code grade],
     UTILISATEURS.[Libellé du grade],
     UTILISATEURS.[Code statut professionnel habilitation principale],
-    UTILISATEURS.[Libellé statut professionnel habilitation principale],
+    UTILISATEURS.[Libellé statut professionnel habilitation principale],*/
     'S' AS [Code statut d'activité],
     'Situation Secondaire' AS [Libellé statut d'activité],
     'A' AS [Type de situation],
@@ -277,19 +285,19 @@ WHERE (((HABILITATIONS_TYPE.[Libellé habilitation type]) LIKE '%Responsable Hier
 /* HABILITATIONS COMPLEMENTAIRES METIERS POUR LES RESPONSABLES HIERARCHIQUES */
 
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES
-    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO], [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel], [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
+    ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO],/* [Code Fonction], [Libellé Fonction], [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel],*/ [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
 SELECT
     UTILISATEURS.[Matricule RH],
     [GROUPE] + ' ' + [LIBELLEREF] AS [Code habilitation type],
     'RESP_TERRI' AS [Code profil],
     UTILISATEURS.[Site habilitation principale],
     UTILISATEURS.[UO habilitation principale],
-    FONCTION_REFERENT.CODEREF AS [Code fonction habilitation principale],
+    /*FONCTION_REFERENT.CODEREF AS [Code fonction habilitation principale],
     FONCTION_REFERENT.LIBELLEREF,
     UTILISATEURS.[Code grade],
     UTILISATEURS.[Libellé du grade],
     UTILISATEURS.[Code statut professionnel habilitation principale],
-    UTILISATEURS.[Libellé statut professionnel habilitation principale],
+    UTILISATEURS.[Libellé statut professionnel habilitation principale],*/
     'S' AS [Code statut d'activité],
     'Situation Secondaire' AS [Libellé statut d'activité],
     'A' AS [Type de situation],
@@ -342,6 +350,19 @@ SELECT
     ON (E.[Matricule RH utilisateur]=F.[Matricule RH utilisateur] AND E.[Code profil]=F.Profil)
 ORDER BY E.[Matricule RH utilisateur]
 
+
+declare @sql varchar(8000)
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES_EXPORT out c:\temp\datafile.csv -c -C 1252 -t";"  -T -S'+ @@servername
+exec master..xp_cmdshell @sql
+
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_TYPE out c:\temp\HABILITATIONS_TYPE.csv -c -C 1252 -t";"  -T -S'+ @@servername
+exec master..xp_cmdshell @sql
+
+select @sql = 'del /F c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
+exec master..xp_cmdshell @sql
+
+select @sql = 'copy c:\temp\EXPORT_RH_HABILITATIONS_COMPLEMENTAIRES.csv + c:\temp\datafile.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
+exec master..xp_cmdshell @sql
 
 /* Vidage Memoire*/
 
