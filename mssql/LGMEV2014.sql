@@ -187,8 +187,8 @@ UNPIVOT(Valeur
         [Libellé Fonction]
     FROM
         TESTJMD...Equipe$
-    WHERE [Code Profil] <>'GEST'
-Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'
+    /*WHERE [Code Profil] <>'GEST'
+Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'*/
 PRINT '------------------------------------------------------'
 
 END
@@ -225,8 +225,8 @@ FROM
     INNER JOIN (UTILISATEURS U INNER JOIN HABILITATION H ON U.[Matricule RH] = H.Ligne)
     ON HT.[Libellé habilitation type] = H.Colonne
 WHERE H.Valeur IS NOT NULL
-AND HT.[Code profil] <>'GEST'
-Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'
+/*AND HT.[Code profil] <>'GEST'
+Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'*/
 
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1*/
 
@@ -318,7 +318,24 @@ WHERE (((UTILISATEURS.[Code fonction habilitation principale])='CDC' OR (UTILISA
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES_EXPORT
 SELECT
     DISTINCT
-    E.*,
+    /*E.*,*/
+    E.[Matricule RH utilisateur],
+    E.[Code habilitation type],
+    E.[Code profil],
+    E.[Code barre site],
+    E.[Code UO],
+    E.[Code Fonction],
+    E.[Libellé Fonction],
+    E.[Code Grade],
+    E.[Libellé grade],
+    E.[Code Statut professionnel],
+    E.[Libellé Statut professionnel],
+    E.[Code statut d'activité],
+    E.[Libellé statut d'activité],
+    E.[Type de situation],
+    E.[Libellé type de situation],
+    E.[Date de début d'habilitation],
+    E.[Date de fin d'habilitation],
     F.Profil_def
 FROM
     HABILITATIONS_COMPLEMENTAIRES E LEFT JOIN (
