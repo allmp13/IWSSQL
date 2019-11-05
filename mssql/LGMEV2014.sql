@@ -362,7 +362,7 @@ FROM
     FONCTION_REFERENT F
 WHERE (F.PROFIL='RESP_HIER2' AND U.[Code fonction habilitation principale] IN ('CDG','CDG2','40CHG'));
 
-/* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1 SPV*/
+/* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1 DOUBLE STATUT*/
 
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES
     ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO],[Code Fonction], [Libellé Fonction],/*  [Code Grade], [Libellé grade], [Code Statut professionnel], [Libellé Statut professionnel],*/ [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
@@ -397,7 +397,7 @@ FROM
   WHERE [Code Fonction]='50CHC') U
 WHERE (((H.[Libellé habilitation type]) LIKE '%Responsable Hierarchique') AND ((U.[Code fonction habilitation principale]) IN ('cds','cdc','cdcsp','cdst','CDSPRV','50CHC','50CHS')));
 
-/* HABILITATIONS COMPLEMENTAIRES REFERENTS METIERS POUR LES RESPONSABLES HIERARCHIQUES NIV1 SPV */
+/* HABILITATIONS COMPLEMENTAIRES REFERENTS METIERS POUR LES RESPONSABLES HIERARCHIQUES NIV1 DOUBLE STATUT */
 
 INSERT INTO HABILITATIONS_COMPLEMENTAIRES
     ( [Matricule RH utilisateur], [Code habilitation type], [Code profil], [Code barre site], [Code UO], [Code Fonction], [Libellé Fonction], [Code statut d'activité], [Libellé statut d'activité], [Type de situation], [Libellé type de situation], [Date de début d'habilitation], [Date de fin d'habilitation] )
@@ -494,7 +494,7 @@ exec master..xp_cmdshell @sql
 select @sql = 'del /F c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
 exec master..xp_cmdshell @sql
 
-select @sql = 'copy c:\temp\EXPORT_RH_HABILITATIONS_COMPLEMENTAIRES.csv + c:\temp\datafile.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
+select @sql = 'copy c:\temp\TEST_HABILITATIONS_COMPLEMENTAIRES.csv + c:\temp\datafile.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
 exec master..xp_cmdshell @sql
 
 select @sql = 'del /F c:\temp\datafile.csv'
