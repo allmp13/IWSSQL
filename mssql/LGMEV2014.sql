@@ -1,7 +1,9 @@
 SET NOCOUNT ON
 DECLARE @Racine_Matrice varchar(255)
+
 /*Set @Racine_Matrice='\\srvlgme-t\d$\ISILOG\Passerelle RH\TESTJMD\'*/
 SET @Racine_Matrice='C:\TEMP\'
+
 
 
 
@@ -262,7 +264,7 @@ SELECT
 FROM
     HABILITATIONS_TYPE H,
     UTILISATEURS U
-WHERE (((H.[Libellé habilitation type]) LIKE '%Responsable Hierarchique') AND ((U.[Code fonction habilitation principale]) IN ('cds','cdc','cdcsp','cdst','CDSPRV','50CHC','50CHS')));
+WHERE (((H.[Libellé habilitation type]) LIKE 'Approbateur Niv1%') AND ((U.[Code fonction habilitation principale]) IN ('cds','cdc','cdcsp','cdst','CDSPRV','50CHC','50CHS')));
 
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 2*/
 
@@ -292,7 +294,7 @@ SELECT
 FROM
     HABILITATIONS_TYPE H,
     UTILISATEURS U
-WHERE (((H.[Libellé habilitation type]) LIKE '%Responsable Hierarchique NIV 2') AND ((U.[Code fonction habilitation principale]) IN ('cdg','cdg2','40CHG')));
+WHERE (((H.[Libellé habilitation type]) LIKE 'Approbateur Niv2%') AND ((U.[Code fonction habilitation principale]) IN ('cdg','cdg2','40CHG')));
 
 /* HABILITATIONS COMPLEMENTAIRES REFERENTS METIERS POUR LES RESPONSABLES HIERARCHIQUES NIV1 */
 /*
@@ -395,7 +397,7 @@ FROM
       ,[Code Fonction] AS [Code fonction habilitation principale]
   FROM [GENHABLGME].[dbo].[HABILITATIONS_COMPLEMENTAIRES_SPV]
   WHERE [Code Fonction]='50CHC') U
-WHERE (((H.[Libellé habilitation type]) LIKE '%Responsable Hierarchique') AND ((U.[Code fonction habilitation principale]) IN ('cds','cdc','cdcsp','cdst','CDSPRV','50CHC','50CHS')));
+WHERE (((H.[Libellé habilitation type]) LIKE 'Approbateur Niv1%') AND ((U.[Code fonction habilitation principale]) IN ('cds','cdc','cdcsp','cdst','CDSPRV','50CHC','50CHS')));
 
 /* HABILITATIONS COMPLEMENTAIRES REFERENTS METIERS POUR LES RESPONSABLES HIERARCHIQUES NIV1 DOUBLE STATUT */
 
