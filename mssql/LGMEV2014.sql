@@ -215,8 +215,10 @@ SELECT
     U.[Libellé du grade],
     U.[Code statut professionnel habilitation principale],
     U.[Libellé statut professionnel habilitation principale],*/
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d activité] AS [Code statut d'activité],
+    U.[Libellé statut d activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS DateDebut,
@@ -255,8 +257,10 @@ SELECT
     UTILISATEURS.[Libellé du grade],
     UTILISATEURS.[Code statut professionnel habilitation principale],
     UTILISATEURS.[Libellé statut professionnel habilitation principale],*/
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d activité] AS [Code statut d'activité],
+    U.[Libellé statut d activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS DateDebut,
@@ -285,8 +289,10 @@ SELECT
     UTILISATEURS.[Libellé du grade],
     UTILISATEURS.[Code statut professionnel habilitation principale],
     UTILISATEURS.[Libellé statut professionnel habilitation principale],*/
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d activité] AS [Code statut d'activité],
+    U.[Libellé statut d activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS DateDebut,
@@ -330,8 +336,10 @@ SELECT
     U.[UO habilitation principale] AS [Code UO],
     F.CODEREF AS [Code Fonction],
     F.LIBELLEREF AS [Libellé Fonction],
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d activité] AS [Code statut d'activité],
+    U.[Libellé statut d activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS [Date de début d'habilitation],
@@ -353,8 +361,10 @@ SELECT
     U.[UO habilitation principale] AS [Code UO],
     F.CODEREF AS [Code Fonction],
     F.LIBELLEREF AS [Libellé Fonction],
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d activité] AS [Code statut d'activité],
+    U.[Libellé statut d activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS [Date de début d'habilitation],
@@ -383,8 +393,10 @@ SELECT
     UTILISATEURS.[Libellé du grade],
     UTILISATEURS.[Code statut professionnel habilitation principale],
     UTILISATEURS.[Libellé statut professionnel habilitation principale],*/
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d'activité] AS [Code statut d'activité],
+    U.[Libellé statut d'activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS DateDebut,
@@ -395,6 +407,9 @@ FROM
       ,[Code barre site] AS [Site habilitation principale]
       ,[Code UO] AS [UO habilitation principale]
       ,[Code Fonction] AS [Code fonction habilitation principale]
+      ,[Code statut d'activité]
+      ,[Libellé statut d'activité]
+
   FROM [GENHABLGME].[dbo].[HABILITATIONS_COMPLEMENTAIRES_SPV]
   WHERE [Code Fonction]='50CHC') U
 WHERE (((H.[Libellé habilitation type]) LIKE 'Approbateur Niv1%') AND ((U.[Code fonction habilitation principale]) IN ('cds','cdc','cdcsp','cdst','CDSPRV','50CHC','50CHS')));
@@ -411,8 +426,10 @@ SELECT
     U.[UO habilitation principale] AS [Code UO],
     F.CODEREF AS [Code Fonction],
     F.LIBELLEREF AS [Libellé Fonction],
-    'S' AS [Code statut d'activité],
-    'Situation Secondaire' AS [Libellé statut d'activité],
+    /*'S' AS [Code statut d'activité],
+    'Situation Secondaire' AS [Libellé statut d'activité],*/
+    U.[Code statut d'activité] AS [Code statut d'activité],
+    U.[Libellé statut d'activité] AS [Libellé statut d'activité],
     'A' AS [Type de situation],
     'Actif' AS [Libellé type de situation],
     '01/01/2018' AS [Date de début d'habilitation],
@@ -422,6 +439,8 @@ FROM
       ,[Code barre site] AS [Site habilitation principale]
       ,[Code UO] AS [UO habilitation principale]
       ,[Code Fonction] AS [Code fonction habilitation principale]
+      ,[Code statut d'activité]
+      ,[Libellé statut d'activité]
   FROM [GENHABLGME].[dbo].[HABILITATIONS_COMPLEMENTAIRES_SPV]
   WHERE [Code Fonction]='50CHC') U,
     FONCTION_REFERENT F
