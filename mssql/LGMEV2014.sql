@@ -191,8 +191,8 @@ UNPIVOT(Valeur
         [Libellé Fonction]
     FROM
         TESTJMD...Equipe$
-    /*WHERE [Code Profil] <>'GEST'
-Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'*/
+    WHERE [Code Profil] <>'GEST'
+Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'
 PRINT '------------------------------------------------------'
 
 END
@@ -235,8 +235,8 @@ FROM
     INNER JOIN (UTILISATEURS U INNER JOIN HABILITATION H ON U.[Matricule RH] = H.Ligne)
     ON HT.[Libellé habilitation type] = H.Colonne
 WHERE H.Valeur IS NOT NULL
-/*AND HT.[Code profil] <>'GEST'
-Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'*/
+AND HT.[Code profil] <>'GEST'
+Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'
 
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1*/
 
