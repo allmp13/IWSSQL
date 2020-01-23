@@ -1,10 +1,9 @@
 SET NOCOUNT ON
 DECLARE @Racine_Matrice varchar(255)
+DECLARE @sql varchar(8000)
 
 /*Set @Racine_Matrice='\\srvlgme-t\d$\ISILOG\Passerelle RH\TESTJMD\'*/
 SET @Racine_Matrice='C:\TEMP\'
-
-
 
 
 PRINT 'DEBUT'
@@ -191,8 +190,8 @@ UNPIVOT(Valeur
         [Libellé Fonction]
     FROM
         TESTJMD...Equipe$
-    WHERE [Code Profil] <>'GEST'
-Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'
+    /*WHERE [Code Profil] <>'GEST'
+Print 'HABILITATIONS_TYPE Sans les Profils Gestionnaire'*/
 PRINT '------------------------------------------------------'
 
 END
@@ -235,8 +234,8 @@ FROM
     INNER JOIN (UTILISATEURS U INNER JOIN HABILITATION H ON U.[Matricule RH] = H.Ligne)
     ON HT.[Libellé habilitation type] = H.Colonne
 WHERE H.Valeur IS NOT NULL
-AND HT.[Code profil] <>'GEST'
-Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'
+/*AND HT.[Code profil] <>'GEST'
+Print 'HABILITATIONS_COMPLEMENTAIRES Sans les Profils Gestionnaire'*/
 
 /* MAJ RESPONSABLE HIERARCHIQUE NIVEAU 1*/
 
@@ -501,27 +500,76 @@ SELECT
     ON (E.[Matricule RH utilisateur]=F.[Matricule RH utilisateur] AND E.[Code profil]=F.Profil)
 ORDER BY E.[Matricule RH utilisateur]
 
+/* GENERATION DES FICHIERS CSV */
 
-declare @sql varchar(8000)
-select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES_EXPORT out c:\temp\datafile.csv -c -C 1252 -t";"  -T -S'+ @@servername
+/*---------------------*/
+/* HABILITATIONS TYPES */
+
+/* AVEC GESTIONNAIRES */
+
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_TYPE out c:\temp\HT_AVEC_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
 exec master..xp_cmdshell @sql
 
-select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_TYPE out c:\temp\HABILITATIONS_TYPE1.csv -c -C 1252 -t";"  -T -S'+ @@servername
+select @sql = 'copy c:\temp\ENTETE_HABTYP.csv + c:\temp\HT_AVEC_GEST.csv c:\temp\HABILITATIONS_TYPE_AVEC_GEST.csv'
 exec master..xp_cmdshell @sql
 
-select @sql = 'copy c:\temp\ENTETE_HABTYP.csv + c:\temp\HABILITATIONS_TYPE1.csv c:\temp\HABILITATIONS_TYPE.csv'
+
+select @sql = 'del /F c:\temp\HT_AVEC_GEST.csv'
 exec master..xp_cmdshell @sql
 
-select @sql = 'del /F c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
+/* SANS GESTIONNAIRES */
+
+/*SUPPRESSION DES PROFILS GESTIONNAIRES*/
+
+DELETE
+FROM
+    HABILITATIONS_TYPE
+WHERE [Code profil]='GEST'
+
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_TYPE out c:\temp\HT_SANS_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
 exec master..xp_cmdshell @sql
 
-select @sql = 'copy c:\temp\TEST_HABILITATIONS_COMPLEMENTAIRES.csv + c:\temp\datafile.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
+select @sql = 'copy c:\temp\ENTETE_HABTYP.csv + c:\temp\HT_SANS_GEST.csv c:\temp\HABILITATIONS_TYPE_SANS_GEST.csv'
 exec master..xp_cmdshell @sql
 
-select @sql = 'del /F c:\temp\datafile.csv'
+select @sql = 'del /F c:\temp\HT_SANS_GEST.csv'
 exec master..xp_cmdshell @sql
 
-select @sql = 'del /F c:\temp\HABILITATIONS_TYPE1.csv'
+
+/*-------------------------------*/
+/* HABILITATIONS COMPLEMENTAIRES */
+
+/* AVEC GESTIONNAIRES */
+
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES_EXPORT out c:\temp\HC_AVEC_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
+exec master..xp_cmdshell @sql
+
+select @sql = 'copy c:\temp\TEST_HABILITATIONS_COMPLEMENTAIRES.csv + c:\temp\HC_AVEC_GEST.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES_AVEC_GEST.csv'
+exec master..xp_cmdshell @sql
+
+select @sql = 'del /F c:\temp\HC_AVEC_GEST.csv'
+exec master..xp_cmdshell @sql
+
+
+/* SANS GESTIONNAIRES */
+
+/*SUPPRESSION DES PROFILS GESTIONNAIRES*/
+
+DELETE
+FROM
+    HABILITATIONS_COMPLEMENTAIRES_EXPORT
+WHERE [Code profil]='GEST'
+
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES_EXPORT out c:\temp\HC_SANS_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
+exec master..xp_cmdshell @sql
+
+/*select @sql = 'del /F c:\temp\HABILITATIONS_COMPLEMENTAIRES.csv'
+exec master..xp_cmdshell @sql*/
+
+select @sql = 'copy c:\temp\TEST_HABILITATIONS_COMPLEMENTAIRES.csv + c:\temp\HC_SANS_GEST.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES_SANS_GEST.csv'
+exec master..xp_cmdshell @sql
+
+select @sql = 'del /F c:\temp\HC_SANS_GEST.csv'
 exec master..xp_cmdshell @sql
 
 
