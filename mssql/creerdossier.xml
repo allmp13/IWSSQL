@@ -1,0 +1,31 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <IsiWsAuthHeader xmlns="http://isilog.fr">
+      <IsiLogin>DEMO</IsiLogin>
+      <IsiPassword></IsiPassword>
+      <IsiCallProgram>IsiAddCall</IsiCallProgram>
+      <IsiDataBaseID>IWSTEST</IsiDataBaseID>
+      <IsiAnnuaire>SRVLGME-T</IsiAnnuaire>
+    </IsiWsAuthHeader>
+  </soap:Header>
+  <soap:Body>
+    <IsiAddAndGetCall xmlns="http://isilog.fr">
+      <pIsiCallEntity>
+        <IsiFields>
+          <IsiWsDataField>
+            <IsiField>C_OBJETSERVICE</IsiField>
+            <IsiValue>1630574</IsiValue>
+          </IsiWsDataField>
+          <IsiWsDataField>
+            <IsiField>C_EQUIPE</IsiField>
+            <IsiValue>I10</IsiValue>
+          </IsiWsDataField>
+          <IsiWsDataField>
+            <IsiField>DE_SYMPAPPEL</IsiField>
+            <IsiValue>YESSSS Ca marche!!!!!</IsiValue>
+          </IsiWsDataField>          
+        </IsiFields>
+      </pIsiCallEntity>
+    </IsiAddAndGetCall>
+  </soap:Body>
+</soap:Envelope>

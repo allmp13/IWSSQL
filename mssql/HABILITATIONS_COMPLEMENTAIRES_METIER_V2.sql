@@ -208,7 +208,8 @@ SELECT
     H.Colonne AS [Code habilitation type],
     HT.[Code profil],
     /*U.[Site habilitation principale],*/
-    HT.[Code Site],
+    /*HT.[Code Site],*/
+    ISNULL(HT.[Code Site],U.[Site habilitation principale]),
     U.[UO habilitation principale],
     HT.[Code fonction],
     HT.[Libellé fonction],
@@ -267,7 +268,7 @@ exec master..xp_cmdshell @sql
 DELETE
 FROM
     HABILITATIONS_TYPE
-WHERE [Code profil]='GEST' /*AND [Libellé habilitation type] not like 'GSIC%' AND [Libellé habilitation type] not like 'GTL%' */ 
+WHERE [Code profil]='GEST' AND [Libellé habilitation type] not like 'GSIC%' /* AND [Libellé habilitation type] not like 'GTL%' */ 
 
 /*select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_TYPE out c:\temp\HT_SANS_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername*/
 select @sql = 'bcp "select [Libellé habilitation type],[Code profil],[Code fonction],[Libellé fonction],[Code grade],[Libellé grade],[Code statut professionnel],[Libellé statut professionnel],[Code Statut d''activité],[Libellé statut d''activité],[Code Equipe],[Libellé Equipe],[Rôle dans l''équipe],[Code Nature],[Lecture seule] from GENHABLGME.dbo.HABILITATIONS_TYPE GROUP BY [Libellé habilitation type],[Code profil],[Code fonction],[Libellé fonction],[Code grade],[Libellé grade],[Code statut professionnel],[Libellé statut professionnel],[Code Statut d''activité],[Libellé statut d''activité],[Code Equipe],[Libellé Equipe],[Rôle dans l''équipe],[Code Nature],[Lecture seule]" queryout c:\temp\HT_SANS_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
@@ -303,7 +304,7 @@ exec master..xp_cmdshell @sql
 DELETE
 FROM
     HABILITATIONS_COMPLEMENTAIRES
-WHERE [Code profil]='GEST' /*AND [Code habilitation type] not like 'GSIC%' AND [Code habilitation type] not like 'GTL%'*/
+WHERE [Code profil]='GEST'AND [Code habilitation type] not like 'GSIC%'  /* AND [Code habilitation type] not like 'GTL%'*/
 
 select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES out c:\temp\HC_SANS_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
 exec master..xp_cmdshell @sql
