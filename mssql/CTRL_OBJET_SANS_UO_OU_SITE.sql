@@ -20,6 +20,6 @@ WHERE
   AND
   suiteisilog.CATALOGUE.C_NATUREOBJ = 'INF'
  AND 
-suiteisilog.OBJET.C_SITE not in ('51866','51783')
+suiteisilog.OBJET.C_SITE not in ('51866','51783') /*51866 = STOCKS\GSIC\REFORME GSIC , 51783= STOCKS\GSIC\Magasin GSIC */
 AND suiteisilog.OBJET.D_ARCHIVE is NULL
 /*GROUP BY suiteisilog.CATALOGUE.C_NATUREOBJ*/
