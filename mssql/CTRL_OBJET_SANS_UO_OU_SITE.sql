@@ -7,7 +7,8 @@ SELECT
   suiteisilog.OBJET.T_SERVICE,
   suiteisilog.CATALOGUE.L_REF,
   /*count(*),*/
-  suiteisilog.CATALOGUE.C_NATUREOBJ
+  suiteisilog.CATALOGUE.C_NATUREOBJ,
+  suiteisilog.CATALOGUE.C_TYPOBJ
 FROM
   suiteisilog.CATALOGUE INNER JOIN suiteisilog.OBJET ON (suiteisilog.OBJET.C_REF=suiteisilog.CATALOGUE.C_REF)
 
@@ -23,3 +24,4 @@ WHERE
 suiteisilog.OBJET.C_SITE not in ('51866','51783') /*51866 = STOCKS\GSIC\REFORME GSIC , 51783= STOCKS\GSIC\Magasin GSIC */
 AND suiteisilog.OBJET.D_ARCHIVE is NULL
 /*GROUP BY suiteisilog.CATALOGUE.C_NATUREOBJ*/
+/*AND suiteisilog.CATALOGUE.C_TYPOBJ='IFAX'*/

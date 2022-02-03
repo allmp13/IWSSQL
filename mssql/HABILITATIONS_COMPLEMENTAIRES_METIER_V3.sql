@@ -1,3 +1,25 @@
+/*
+
+GENERATION DES HABILITATIONS COMPLEMENTAIRES METIERS A PARTIR DES MATRICES METIERS
+
+MODE OPERATOIRE:
+
+Copier les fichiers:
+    \\srvlgme-t\d$\ISILOG\Passerelle RH\UTILISATEURS.csv
+    \\srvlgme-t\d$\ISILOG\Passerelle RH\TEST_HABILITATIONS_COMPLEMENTAIRES.csv
+dans \\srvmssql-f\c$\GENHABLGME
+
+Lancer la requête SQL avec:
+    SET @environnement='PROD'
+puis relancer la requête SQL avec:
+    SET @environnement='TEST'
+
+Copier les fichiers:
+    \\srvmssql-f\c$\GENHABLGME\PROD\HABILITATIONS_COMPLEMENTAIRES_METIER_SANS_GEST.csv
+    \\srvmssql-f\c$\GENHABLGME\TEST\HABILITATIONS_COMPLEMENTAIRES_METIER_AVEC_GEST.csv
+dans \\srvlgme-t\d$\ISILOG\Passerelle RH
+*/
+
 SET NOCOUNT ON
 DECLARE @Racine_Matrice varchar(255)
 DECLARE @sql varchar(8000)
@@ -271,7 +293,7 @@ select @sql = 'bcp "select [Libellé habilitation type],[Code profil],[Code fonc
 
 exec master..xp_cmdshell @sql
 
-select @sql = 'copy ' + @Racine_Matrice + 'ENTETE_HABTYP.csv + ' + @Racine_Matrice + @environnement + '\HT_AVEC_GEST.csv ' + @Racine_Matrice + @environnement + '\HABILITATIONS_TYPE_' + @environnement + '.csv'
+select @sql = 'copy ' + @Racine_Matrice + 'ENTETE_HABTYP.csv + ' + @Racine_Matrice + @environnement + '\HT_AVEC_GEST.csv ' + @Racine_Matrice + @environnement + '\HABILITATIONS_TYPE.csv'
 exec master..xp_cmdshell @sql
 
 
@@ -293,7 +315,14 @@ exec master..xp_cmdshell @sql
 /*
 select @sql = 'copy c:\temp\HC_AVEC_GEST.csv c:\temp\HABILITATIONS_COMPLEMENTAIRES_METIER_AVEC_GEST.csv'
 */
-select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES out ' + @Racine_Matrice + @environnement + '\HABILITATIONS_COMPLEMENTAIRES_METIER_'+ @environnement +'.csv -c -C 1252 -t";"  -T -S'+ @@servername
+select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES out ' + @Racine_Matrice + @environnement + '\HABILITATIONS_COMPLEMENTAIRES_METIER.csv -c -C 1252 -t";"  -T -S'+ @@servername
+exec master..xp_cmdshell @sql
+
+
+IF @environnement = 'TEST'
+      select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES out ' + @Racine_Matrice + @environnement + '\HABILITATIONS_COMPLEMENTAIRES_METIER_AVEC_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
+ELSE 
+      select @sql = 'bcp GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES out ' + @Racine_Matrice + @environnement + '\HABILITATIONS_COMPLEMENTAIRES_METIER_SANS_GEST.csv -c -C 1252 -t";"  -T -S'+ @@servername
 exec master..xp_cmdshell @sql
 
 select @sql = 'del /F ' + @Racine_Matrice + @environnement + '\HC_AVEC_GEST.csv'
