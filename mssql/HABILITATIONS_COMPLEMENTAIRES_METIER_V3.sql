@@ -27,7 +27,7 @@ DECLARE @metier varchar(255)
 DECLARE @nomfichier varchar(255)
 DECLARE @environnement varchar(255)
 
-SET @environnement='TEST'
+SET @environnement='PROD'
 SET @Racine_Matrice='C:\GENHABLGME\'
 
 
