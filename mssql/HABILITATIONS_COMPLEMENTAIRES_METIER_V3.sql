@@ -1,5 +1,7 @@
 /*
 
+Version 3
+
 GENERATION DES HABILITATIONS COMPLEMENTAIRES METIERS A PARTIR DES MATRICES METIERS
 
 MODE OPERATOIRE:
@@ -27,7 +29,7 @@ DECLARE @metier varchar(255)
 DECLARE @nomfichier varchar(255)
 DECLARE @environnement varchar(255)
 
-SET @environnement='TEST'
+SET @environnement='PROD'
 SET @Racine_Matrice='C:\GENHABLGME\'
 
 
