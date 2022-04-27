@@ -7,8 +7,8 @@ GENERATION DES HABILITATIONS COMPLEMENTAIRES METIERS A PARTIR DES MATRICES METIE
 MODE OPERATOIRE:
 
 Copier les fichiers:
-    \\srvlgme-t\d$\ISILOG\Passerelle RH\UTILISATEURS.csv
-    \\srvlgme-t\d$\ISILOG\Passerelle RH\TEST_HABILITATIONS_COMPLEMENTAIRES.csv
+    \\winlgme-t\d$\ISILOG\Passerelle RH\UTILISATEURS.csv
+    \\winlgme-t\d$\ISILOG\Passerelle RH\TEST_HABILITATIONS_COMPLEMENTAIRES.csv
 dans \\srvmssql-f\c$\GENHABLGME
 
 Lancer la requête SQL avec:
@@ -148,7 +148,7 @@ EXEC sp_dropserver
         TABLE_QUALIFIER   varchar(40),
         TABLE_OWNER       varchar(20),
         TABLE_NAME        varchar(40),
-        COLUMN_NAME       varchar(40),
+        COLUMN_NAME       varchar(50),
         DATA_TYPE         int,
         TYPE_NAME         varchar(20),
         PREC              int,
@@ -179,7 +179,7 @@ EXEC sp_dropserver
         FROM
             #tmp
         WHERE 
-                        COLUMN_NAME <> 'initiale'
+            COLUMN_NAME <> 'initiale'
             AND COLUMN_NAME <> 'matricule'
             AND COLUMN_NAME <> 'nom'
             AND COLUMN_NAME <> 'prenom'
