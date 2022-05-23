@@ -55,7 +55,7 @@ DELETE GENHABLGME.dbo.UTILISATEURS
 
 SET @nomfichier = '''' + @Racine_Matrice + 'UTILISATEURS.csv' + ''''
 SET @nomfichier = 'BULK INSERT GENHABLGME.dbo.UTILISATEURS FROM ' + @nomfichier + ' WITH (FIELDTERMINATOR='';'',FIRSTROW=2,CODEPAGE=''ACP'')'
-PRINT @nomfichier
+/*PRINT @nomfichier*/
 EXECUTE( @nomfichier)
 
 /*
@@ -68,7 +68,7 @@ c:\temp\EXPORT_RH_UTILISATEURS.csv
 
 SET @nomfichier = '''' + @Racine_Matrice + 'TEST_HABILITATIONS_COMPLEMENTAIRES.csv' + ''''
 SET @nomfichier = 'BULK INSERT GENHABLGME.dbo.HABILITATIONS_COMPLEMENTAIRES_SPV FROM '+ @nomfichier +' WITH (FIELDTERMINATOR='';'',FIRSTROW=2,CODEPAGE=''ACP'')'
-PRINT @nomfichier
+/* PRINT @nomfichier */
 EXECUTE( @nomfichier)
 
 /*
@@ -96,6 +96,22 @@ INSERT INTO #metier
     (metier)
 VALUES
     ('LGME - EQUIPE COMPETENTE BIO')
+INSERT INTO #metier
+    (metier)
+VALUES
+    ('LGME - EQUIPE COMPETENTE ARI')
+INSERT INTO #metier
+    (metier)
+VALUES
+    ('LGME - EQUIPE COMPETENTE MTI')
+INSERT INTO #metier
+    (metier)
+VALUES
+    ('LGME - EQUIPE COMPETENTE TRS')
+INSERT INTO #metier
+    (metier)
+VALUES
+    ('LGME - EQUIPE COMPETENTE HAB')
 INSERT INTO #metier
     (metier)
 VALUES
