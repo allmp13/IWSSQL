@@ -3,7 +3,7 @@ SELECT C_SERVICE
      , N_SERVICE
      , C_SERVICEBARRE
      , *
-FROM SERVICE
+FROM suiteisilog.SERVICE
 WHERE (
           C_SERVICE_PERE <> 'ASTRE'
           OR C_SERVICE_PERE IS NULL
