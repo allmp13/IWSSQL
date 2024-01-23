@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "e4b65ffa-1d98-4229-a1b2-d1eb60585117",
+		"name": "Creer Dossier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26714724"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"#POST\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:isil=\"http://isilog.fr\">\r\n   <soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\r\n      <isil:IsiWsAuthHeader>\r\n         <!--Optional:-->\r\n         <isil:IsiLogin>DEMO</isil:IsiLogin>\r\n         <!--Optional:-->\r\n         <isil:IsiPassword></isil:IsiPassword>\r\n         <!--Optional:-->\r\n         <isil:IsiCallProgram></isil:IsiCallProgram>\r\n         <!--Optional:-->\r\n         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r\n         <!--Optional:-->\r\n         <isil:IsiAnnuaire></isil:IsiAnnuaire>\r\n      </isil:IsiWsAuthHeader>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <isil:IsiAddAndGetCall>\r\n         <!--Optional:-->\r\n         <isil:pIsiCallEntity>\r\n            <!--Optional:-->\r\n            <isil:IsiFields>\r\n               <!--Zero or more repetitions:-->\r\n               <isil:IsiWsDataField>\r\n                  <!--Optional:-->\r\n                  <isil:IsiField>?</isil:IsiField>\r\n                  <!--Optional:-->\r\n                  <isil:IsiValue>?</isil:IsiValue>\r\n               </isil:IsiWsDataField>\r\n            </isil:IsiFields>\r\n         </isil:pIsiCallEntity>\r\n      </isil:IsiAddAndGetCall>\r\n   </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiHelpDeskService.asmx",
+					"protocol": "https",
+					"host": [
+						"iws",
+						"sdis13",
+						"fr"
+					],
+					"path": [
+						"IsilogWebSystem",
+						"WebServices",
+						"IsiHelpDeskService.asmx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

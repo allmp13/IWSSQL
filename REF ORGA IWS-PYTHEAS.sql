@@ -9,3 +9,4 @@ WHERE (
           OR C_SERVICE_PERE IS NULL
           )
      AND C_SERVICE <> 'ASTRE'
+     AND D_ARCHIVE IS NULL

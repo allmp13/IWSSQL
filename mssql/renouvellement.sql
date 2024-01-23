@@ -1,0 +1,81 @@
+
+SELECT
+    C_OBJET,
+    C_BARRE,
+    U.I_UTI_MATRICULERH,
+    S.C_SITEBARRE,
+    UO.C_SERVICE,
+    NO_SERIE,
+    O.C_REF,
+    L_REF,
+    suiteisilog.GetValCaracObj('IANNSORTIE', O.C_OBJET) AS "IREFERENCE"
+FROM
+    suiteisilog.OBJET O
+    INNER JOIN suiteisilog.CATALOGUE C
+    ON C.C_REF = O.C_REF
+    LEFT JOIN suiteisilog.SITE S
+    ON O.C_SITE=S.C_SITE
+    LEFT JOIN suiteisilog.SERVICE UO
+    ON O.C_SERVICE=UO.C_SERVICE
+    LEFT JOIN suiteisilog.UTILISATEUR U
+    ON O.C_UTIL=U.C_UTIL
+WHERE  suiteisilog.GetValCaracObj('IANNSORTIE', O.C_OBJET) = '2023'
+--AND U.I_UTI_MATRICULERH='7710'
+
+SELECT
+    D_HISTLIAISON
+FROM
+    suiteisilog.OBJPEREFILS
+    group by D_HISTLIAISON
+    order by D_HISTLIAISON DESC
+
+
+SELECT
+    OBJP.C_BARRE,
+    OBJF.C_BARRE
+FROM
+    suiteisilog.OBJET OBJF
+    INNER JOIN suiteisilog.OBJPEREFILS REL
+    ON OBJF.C_OBJET=REL.C_OBJET
+    INNER JOIN suiteisilog.CATALOGUE C
+    ON OBJF.C_REF=C.C_REF
+    INNER JOIN suiteisilog.OBJET OBJP
+    ON OBJP.C_OBJET=REL.C_OBJET_PERE
+WHERE  (C.C_FAMOBJ='IECRAN' OR C.C_FAMOBJ='IPERIPH') AND REL.C_OBJET_PERE IN (SELECT
+        C_OBJET
+    FROM
+        suiteisilog.OBJET O
+        INNER JOIN suiteisilog.CATALOGUE C
+        ON C.C_REF = O.C_REF
+        LEFT JOIN suiteisilog.SITE S
+        ON O.C_SITE=S.C_SITE
+        LEFT JOIN suiteisilog.SERVICE UO
+        ON O.C_SERVICE=UO.C_SERVICE
+    WHERE  suiteisilog.GetValCaracObj('IANNSORTIE', O.C_OBJET) = '2023' )
+
+
+SELECT
+    OBJP.C_BARRE,
+    OBJP.I_OBJ_IDUNIQUE,
+    OBJF.C_BARRE,
+    OBJF.I_OBJ_IDUNIQUE,
+    C.L_REF
+FROM
+    suiteisilog.OBJET OBJP
+    INNER JOIN suiteisilog.OBJPEREFILS REL
+    ON OBJP.C_OBJET=REL.C_OBJET_PERE
+    LEFT JOIN suiteisilog.OBJET OBJF
+    ON OBJF.C_OBJET=REL.C_OBJET
+    INNER JOIN suiteisilog.CATALOGUE C
+    ON OBJF.C_REF=C.C_REF
+WHERE  /*OBJP.C_BARRE='B17U083' AND*/ (C.C_FAMOBJ='IECRAN' /*OR C.C_FAMOBJ='IPERIPH'*/) AND REL.C_OBJET_PERE IN (SELECT
+        C_OBJET
+    FROM
+        suiteisilog.OBJET O
+        INNER JOIN suiteisilog.CATALOGUE C
+        ON C.C_REF = O.C_REF
+        LEFT JOIN suiteisilog.SITE S
+        ON O.C_SITE=S.C_SITE
+        LEFT JOIN suiteisilog.SERVICE UO
+        ON O.C_SERVICE=UO.C_SERVICE
+    WHERE  suiteisilog.GetValCaracObj('IANNSORTIE', O.C_OBJET) = '2023' AND suiteisilog.GetValCaracObj('ITYPEUC', O.C_OBJET) not in ('PC SIMULATEUR','TABLETTE','PC SIMULATEUR BI'))

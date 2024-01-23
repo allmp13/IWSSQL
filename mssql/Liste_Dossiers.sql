@@ -1,0 +1,1 @@
+select S.C_BARRE,R.L_REF,A.* from suiteisilog.APPEL A INNER JOIN suiteisilog.OBJET S ON S.C_OBJET= A.C_OBJETSERVICE INNER JOIN suiteisilog.CATALOGUE R On R.C_REF=S.C_REF

@@ -16,3 +16,6 @@ SELECT U.Nom,H2.*
 FROM
     HABILITATIONS_COMPLEMENTAIRES AS H2, UTILISATEURS U
 WHERE H2.[Matricule RH utilisateur]='14322'and H2.[Matricule RH utilisateur]=u.[Matricule RH]
+
+
+SELECT * FROM suiteisilog.SITE

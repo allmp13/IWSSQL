@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">http://isilog.fr/IIsiQueryService/IsiGetQueryResultResponse</a:Action>
+   </s:Header>
+   <s:Body>
+      <IsiGetQueryResultResponse xmlns="http://isilog.fr/">
+         <IsiGetQueryResultResult xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <Feedback i:nil="true"/>
+            <Objects xmlns:b="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+               <b:anyType i:type="ArrayOfIsiWsEntity">
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>IILOG0074, Conteneur Licences</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>7710</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>7710</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1654377</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>IPYT13729, Sony Bravia 55BZ30J  4K Android</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>B22E013</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>Sony Bravia 55BZ30J  4K Android</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1653060</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>IPYT13484, Station d'Accueil KENSINGTON USB-C et USB-A  Dual 4K</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>B22B002</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>Station d'Accueil USB-C et USB-A</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1653047</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>IPYT06360, ThinkPad L580</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>B18U096</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>B18U096</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1649947</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>IPYT02378, ECRAN LCD 22''W FHD LED</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>B13EG120</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>ECRAN LCD 22''W FHD LED</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1648247</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>IPYT01150, ECRAN LCD 22''WHD+</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>B13E200</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>ECRAN LCD 22''WHD+</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1648169</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>ITERMMOB0012, XIAOMI REDMI 9T</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>I21000484</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>XIAOMI REDMI 9T</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1636226</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+                  <IsiWsEntity>
+                     <IsiFields>
+                        <IsiWsDataField>
+                           <IsiField>L_REFERENCECOMPLET</IsiField>
+                           <IsiValue>ISFR0003, Forfait SFR Voix/SMS/MMS/DATA 20 Go Europe</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_BARRE</IsiField>
+                           <IsiValue>SIM-02077</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>N_OBJET</IsiField>
+                           <IsiValue>Forfait SFR Voix/SMS/MMS/DATA 20 Go France</IsiValue>
+                        </IsiWsDataField>
+                        <IsiWsDataField>
+                           <IsiField>C_OBJET</IsiField>
+                           <IsiValue>1630711</IsiValue>
+                        </IsiWsDataField>
+                     </IsiFields>
+                  </IsiWsEntity>
+               </b:anyType>
+            </Objects>
+            <Statut>responseOk</Statut>
+            <TotalRecordCount>8</TotalRecordCount>
+            <Trace/>
+         </IsiGetQueryResultResult>
+      </IsiGetQueryResultResponse>
+   </s:Body>
+</s:Envelope>

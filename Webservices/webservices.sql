@@ -1,0 +1,1 @@
+select C_BARRE,* from OBJET WHERE L_COMMENT like 'Déc%'

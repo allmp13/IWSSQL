@@ -1,0 +1,48 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER FUNCTION
+    [suiteisilog].[CLIENT_AFFACT_EQP] (
+        @vnumAppelInstProc NUMERIC,
+        @sC_TACTION VARCHAR(30),
+        @sEcran_Action VARCHAR(15)
+    ) RETURNS VARCHAR(15) AS 
+    BEGIN 
+    DECLARE @C_EQUIPE VARCHAR(15) 
+    IF @sEcran_Action = 'ACTION'
+SELECT
+    @C_EQUIPE = X.C_EQUIPECONTRAT
+FROM APPEL APP
+    LEFT JOIN (
+        SELECT
+            LC.C_TACTION,
+            C.C_EQUIPECONTRAT,
+            LC.C_SITE,
+            LC.C_OBJSERVICE
+        FROM LIGNECTR LC
+            INNER JOIN CONTRAT C ON LC.NO_CTR = C.NO_CTR
+        WHERE
+            LC.C_TACTION = @sC_TACTION
+            AND LC.D_ARCHIVE IS NULL
+            AND LC.D_ARCHIVE IS NULL
+    ) X ON X.C_SITE = APP.C_SITE_DEST
+    AND X.C_OBJSERVICE = APP.C_OBJETSERVICE
+WHERE
+    APP.NO_APPEL = @vnumAppelInstProc IF @@ERROR > 0
+RETURN NULL
+    ELSE
+RETURN @C_EQUIPE
+RETURN @C_EQUIPE
+END
+GO
+
+
+select [suiteisilog].[CLIENT_AFFACT_EQP] (
+       215242,
+        'I_INTERV_003',
+        'ACTION'
+    )
+
+    select * from suiteisilog.Z_SITEHIER WHERE C_SITEHIER='51434'
+    SELECT * FROM suiteisilog.SITE S where S.N_SITE like 'MIRAMAS%'

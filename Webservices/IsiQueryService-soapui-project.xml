@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1401fe4e-dfe4-4433-8b95-d752cb143f6c" activeEnvironment="Default" name="IsiQueryService" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="17af3574-c9cd-455f-9753-5c1f26822b9a" wsaVersion="200508" name="WSHttpBinding_IIsiQueryService" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_IIsiQueryService" soapVersion="1_2" anonymous="optional" definition="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?WSDL"><con:part><con:url>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="IsiQueryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:i0="http://isilog.fr/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IIsiQueryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://isilog.fr/" location="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="WSHttpBinding_IIsiQueryService" type="i0:IIsiQueryService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IIsiQueryService_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="IsiGetQueryResult">
+      <soap12:operation soapAction="http://isilog.fr/IIsiQueryService/IsiGetQueryResult" style="document"/>
+      <wsdl:input>
+        <soap12:header message="i0:IIsiQueryService_IsiGetQueryResult_InputMessage_Headers" part="IsiWsAuthHeader" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiGetCriteria">
+      <soap12:operation soapAction="http://isilog.fr/IIsiQueryService/IsiGetCriteria" style="document"/>
+      <wsdl:input>
+        <soap12:header message="i0:IIsiQueryService_IsiGetCriteria_InputMessage_Headers" part="IsiWsAuthHeader" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IsiQueryService">
+    <wsdl:port name="WSHttpBinding_IIsiQueryService" binding="tns:WSHttpBinding_IIsiQueryService">
+      <soap12:address location="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://isilog.fr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://isilog.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://isilog.fr/Imports">
+      <xsd:import schemaLocation="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd1" namespace="http://isilog.fr/"/>
+      <xsd:import schemaLocation="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIsiQueryService_IsiGetQueryResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsiGetQueryResult"/>
+  </wsdl:message>
+  <wsdl:message name="IIsiQueryService_IsiGetQueryResult_InputMessage_Headers">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IIsiQueryService_IsiGetQueryResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsiGetQueryResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IIsiQueryService_IsiGetCriteria_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsiGetCriteria"/>
+  </wsdl:message>
+  <wsdl:message name="IIsiQueryService_IsiGetCriteria_InputMessage_Headers">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IIsiQueryService_IsiGetCriteria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsiGetCriteriaResponse"/>
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IIsiQueryService">
+    <wsdl:operation name="IsiGetQueryResult">
+      <wsdl:input wsaw:Action="http://isilog.fr/IIsiQueryService/IsiGetQueryResult" message="tns:IIsiQueryService_IsiGetQueryResult_InputMessage"/>
+      <wsdl:output wsaw:Action="http://isilog.fr/IIsiQueryService/IsiGetQueryResultResponse" message="tns:IIsiQueryService_IsiGetQueryResult_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiGetCriteria">
+      <wsdl:input wsaw:Action="http://isilog.fr/IIsiQueryService/IsiGetCriteria" message="tns:IIsiQueryService_IsiGetCriteria_InputMessage"/>
+      <wsdl:output wsaw:Action="http://isilog.fr/IIsiQueryService/IsiGetCriteriaResponse" message="tns:IIsiQueryService_IsiGetCriteria_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://isilog.fr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://isilog.fr/">
+  <xs:import schemaLocation="https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="IsiWsCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsiCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiLibelle" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiTypeOp" type="tns:TypeOperator"/>
+      <xs:element minOccurs="0" name="IsiValue" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsiWsCriteria" nillable="true" type="tns:IsiWsCriteria"/>
+  <xs:simpleType name="TypeOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMPTY"/>
+      <xs:enumeration value="EQUAL"/>
+      <xs:enumeration value="SUPERIOR"/>
+      <xs:enumeration value="SUBORDINATE"/>
+      <xs:enumeration value="SUPERIOR_EQUAL"/>
+      <xs:enumeration value="SUBORDINATE_EQUAL"/>
+      <xs:enumeration value="DIFFERENT"/>
+      <xs:enumeration value="BETWEEN"/>
+      <xs:enumeration value="NOT_BETWEEN"/>
+      <xs:enumeration value="INSIDE"/>
+      <xs:enumeration value="NOT_INSIDE"/>
+      <xs:enumeration value="LIKE"/>
+      <xs:enumeration value="NOT_LIKE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeOperator" nillable="true" type="tns:TypeOperator"/>
+  <xs:complexType name="IsiWsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Feedback" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Objects" nillable="true" type="q1:ArrayOfanyType" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="Statut" type="tns:IsiWsResponseType"/>
+      <xs:element minOccurs="0" name="TotalRecordCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="Trace" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsiWsResponse" nillable="true" type="tns:IsiWsResponse"/>
+  <xs:simpleType name="IsiWsResponseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="responseOk"/>
+      <xs:enumeration value="responseWarning"/>
+      <xs:enumeration value="responseError"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IsiWsResponseType" nillable="true" type="tns:IsiWsResponseType"/>
+  <xs:complexType name="IsiWsEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsiFields" nillable="true" type="tns:ArrayOfIsiWsDataField"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsiWsEntity" nillable="true" type="tns:IsiWsEntity"/>
+  <xs:complexType name="ArrayOfIsiWsDataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IsiWsDataField" nillable="true" type="tns:IsiWsDataField"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIsiWsDataField" nillable="true" type="tns:ArrayOfIsiWsDataField"/>
+  <xs:complexType name="IsiWsDataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsiField" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiValue" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsiWsDataField" nillable="true" type="tns:IsiWsDataField"/>
+  <xs:complexType name="ArrayOfIsiWsEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IsiWsEntity" nillable="true" type="tns:IsiWsEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIsiWsEntity" nillable="true" type="tns:ArrayOfIsiWsEntity"/>
+  <xs:element name="IsiGetQueryResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryId" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="limit" type="xs:int"/>
+        <xs:element minOccurs="0" name="totalRecordCount" type="xs:boolean"/>
+        <xs:element minOccurs="0" name="modifiedCriteria" nillable="true" type="tns:ArrayOfIsiWsCriteria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfIsiWsCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IsiWsCriteria" nillable="true" type="tns:IsiWsCriteria"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIsiWsCriteria" nillable="true" type="tns:ArrayOfIsiWsCriteria"/>
+  <xs:complexType name="IsiWsWcfAuthHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsiAnnuaire" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiCallProgram" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiDataBaseID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiLogin" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsiPassword" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsiWsWcfAuthHeader" nillable="true" type="tns:IsiWsWcfAuthHeader"/>
+  <xs:element name="IsiWsAuthHeader" nillable="true" type="tns:IsiWsWcfAuthHeader"/>
+  <xs:element name="IsiGetQueryResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsiGetQueryResultResult" nillable="true" type="tns:IsiWsResponse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsiGetCriteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryId" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsiGetCriteriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsiGetCriteriaResult" nillable="true" type="tns:IsiWsResponse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <xs:complexType name="ArrayOfanyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</con:endpoint></con:endpoints><con:operation id="b9f53451-da25-4edb-a4ec-2dcc56b275ac" isOneWay="false" action="http://isilog.fr/IIsiQueryService/IsiGetCriteria" name="IsiGetCriteria" bindingOperationName="IsiGetCriteria" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b4286727-b537-433b-8d1b-7a5b78ec6f27" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr/">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire></isil:IsiAnnuaire>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram></isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>DEMO</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword></isil:IsiPassword>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiGetCriteria>\r
+         <!--Optional:-->\r
+         <isil:queryId>TEST</isil:queryId>\r
+      </isil:IsiGetCriteria>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IIsiQueryService/IsiGetCriteria" addDefaultTo="true" addDefaultAction="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8ad2723a-f0f0-4d6a-bd5b-2b8e5423d4d1" isOneWay="false" action="http://isilog.fr/IIsiQueryService/IsiGetQueryResult" name="IsiGetQueryResult" bindingOperationName="IsiGetQueryResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a566fb06-55cd-4328-9412-989ac92a4b8f" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr/">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire></isil:IsiAnnuaire>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram></isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>DEMO</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword></isil:IsiPassword>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiGetQueryResult>\r
+         <!--Optional:-->\r
+         <isil:queryId>TEST</isil:queryId>\r
+         <!--Optional:-->\r
+         <isil:limit>10</isil:limit>\r
+         <!--Optional:-->\r
+         <isil:totalRecordCount>1</isil:totalRecordCount>\r
+         <!--Optional:-->\r
+         <isil:modifiedCriteria>\r
+            <!--Zero or more repetitions:-->\r
+
+            <isil:IsiWsCriteria>
+               <!--Optional:-->
+               <isil:IsiCode>I_UTI_MATRICULERH</isil:IsiCode>
+               <!--Optional:-->
+               <isil:IsiId>71065,60140</isil:IsiId>
+               <!--Optional:-->
+               <isil:IsiLibelle>Matricule RH</isil:IsiLibelle>
+               <!--Optional:-->
+               <isil:IsiTypeOp>EQUAL</isil:IsiTypeOp>
+               <!--Optional:-->
+               <isil:IsiValue>7710</isil:IsiValue>
+            </isil:IsiWsCriteria>
+
+         </isil:modifiedCriteria>\r
+      </isil:IsiGetQueryResult>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IIsiQueryService/IsiGetQueryResult" addDefaultAction="false" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="4ec15ef9-41cc-43dd-8ffb-63eba2c805c9" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ce13bbc5-a9d0-4bf0-88da-b16d542f3749" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="2234fb22-36ec-4c5b-92c7-d176107034d3" name="IsiGetQueryResult - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSHttpBinding_IIsiQueryService</con:interface><con:operation>IsiGetQueryResult</con:operation><con:request name="IsiGetQueryResult - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType="" id="bf84ace3-8664-401d-be82-7afaf6efba49"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr/">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire></isil:IsiAnnuaire>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram></isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>DEMO</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword></isil:IsiPassword>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiGetQueryResult>\r
+         <!--Optional:-->\r
+         <isil:queryId>TEST</isil:queryId>\r
+         <!--Optional:-->\r
+         <isil:limit>10</isil:limit>\r
+         <!--Optional:-->\r
+         <isil:totalRecordCount>1</isil:totalRecordCount>\r
+         <!--Optional:-->\r
+         <isil:modifiedCriteria>\r
+            <!--Zero or more repetitions:-->\r
+
+            <isil:IsiWsCriteria>
+               <!--Optional:-->
+               <isil:IsiCode>I_UTI_MATRICULERH</isil:IsiCode>
+               <!--Optional:-->
+               <isil:IsiId>71065,60140</isil:IsiId>
+               <!--Optional:-->
+               <isil:IsiLibelle>Matricule RH</isil:IsiLibelle>
+               <!--Optional:-->
+               <isil:IsiTypeOp>EQUAL</isil:IsiTypeOp>
+               <!--Optional:-->
+               <isil:IsiValue>17966</isil:IsiValue>
+            </isil:IsiWsCriteria>
+
+         </isil:modifiedCriteria>\r
+      </isil:IsiGetQueryResult>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ba2bdd2d-f39f-43bf-9e91-f0b45aec7289" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IIsiQueryService/IsiGetQueryResult" addDefaultAction="false" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="faefe5c5-8c36-49ac-98aa-cdcca9215add" name="TestSuite 2"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="31755ffa-39ff-4d46-9b58-edce139b985c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="d2d1cd97-2349-483f-9afa-24d7c93a8f37" name="IsiGetCriteria - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSHttpBinding_IIsiQueryService</con:interface><con:operation>IsiGetCriteria</con:operation><con:request name="IsiGetCriteria - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType="" id="6ad17b96-b40f-41a0-b872-eb90ff4bc233"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr/">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire></isil:IsiAnnuaire>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram></isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>DEMO</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword></isil:IsiPassword>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiGetCriteria>\r
+         <!--Optional:-->\r
+         <isil:queryId>TEST</isil:queryId>\r
+      </isil:IsiGetCriteria>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9d0de350-a543-48ff-b55d-9f3ccec8f65c" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IIsiQueryService/IsiGetCriteria" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

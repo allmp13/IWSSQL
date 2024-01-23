@@ -1,0 +1,20 @@
+            <isil:IsiWsCriteria>
+               <!--Optional:-->
+               <isil:IsiCode>I_UTI_MATRICULERH</isil:IsiCode>
+               <!--Optional:-->
+               <isil:IsiId>71065,60136</isil:IsiId>
+               <!--Optional:-->
+               <isil:IsiLibelle>Matricule RH</isil:IsiLibelle>
+               <!--Optional:-->
+               <isil:IsiTypeOp>EQUAL</isil:IsiTypeOp>
+               <!--Optional:-->
+               <isil:IsiValue>7710</isil:IsiValue>
+            </isil:IsiWsCriteria>
+
+            <isil:IsiWsCriteria>
+                  <IsiCode>I_UTI_MATRICULERH</IsiCode>
+                  <IsiId>71065,60136</IsiId>
+                  <IsiLibelle>Matricule RH</IsiLibelle>
+                  <IsiTypeOp>EQUAL</IsiTypeOp>
+                  <IsiValue>7710</IsiValue>
+            </isil:IsiWsCriteria>

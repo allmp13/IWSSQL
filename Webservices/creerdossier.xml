@@ -4,8 +4,8 @@
       <IsiLogin>DEMO</IsiLogin>
       <IsiPassword></IsiPassword>
       <IsiCallProgram>IsiAddCall</IsiCallProgram>
-      <IsiDataBaseID>IWSTEST</IsiDataBaseID>
-      <IsiAnnuaire>SRVLGME-T</IsiAnnuaire>
+      <IsiDataBaseID>IWSREPRISE</IsiDataBaseID>
+      <IsiAnnuaire></IsiAnnuaire>
     </IsiWsAuthHeader>
   </soap:Header>
   <soap:Body>

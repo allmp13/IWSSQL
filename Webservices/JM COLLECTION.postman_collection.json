@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "5ae212f4-ba5b-4f4f-aae5-6d17bf74bd1e",
+		"name": "JM COLLECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26714724"
+	},
+	"item": [
+		{
+			"name": "IsiGetCriteria",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"#POST\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:isil=\"http://isilog.fr/\">\r\n   <soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\r\n      <isil:IsiWsAuthHeader>\r\n         <!--Optional:-->\r\n         <isil:IsiAnnuaire/>\r\n         <!--Optional:-->\r\n         <isil:IsiCallProgram/>\r\n         <!--Optional:-->\r\n         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r\n         <!--Optional:-->\r\n         <isil:IsiLogin>DEMO</isil:IsiLogin>\r\n         <!--Optional:-->\r\n         <isil:IsiPassword/>\r\n      </isil:IsiWsAuthHeader>\r\n   <wsa:Action>http://isilog.fr/IIsiQueryService/IsiGetCriteria</wsa:Action><wsa:To>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</wsa:To></soap:Header>\r\n   <soap:Body>\r\n      <isil:IsiGetCriteria>\r\n         <!--Optional:-->\r\n         <isil:queryId>TEST</isil:queryId>\r\n      </isil:IsiGetCriteria>\r\n   </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc",
+					"protocol": "https",
+					"host": [
+						"iws",
+						"sdis13",
+						"fr"
+					],
+					"path": [
+						"IsilogWebSystem",
+						"WebServices",
+						"IsiQueryService.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsiQueryService",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"#POST\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:isil=\"http://isilog.fr/\">\r\n   <soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\r\n      <isil:IsiWsAuthHeader>\r\n         <!--Optional:-->\r\n         <isil:IsiAnnuaire/>\r\n         <!--Optional:-->\r\n         <isil:IsiCallProgram/>\r\n         <!--Optional:-->\r\n         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r\n         <!--Optional:-->\r\n         <isil:IsiLogin>DEMO</isil:IsiLogin>\r\n         <!--Optional:-->\r\n         <isil:IsiPassword/>\r\n      </isil:IsiWsAuthHeader>\r\n   <wsa:Action>http://isilog.fr/IIsiQueryService/IsiGetQueryResult</wsa:Action><wsa:To>https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc</wsa:To></soap:Header>\r\n   <soap:Body>\r\n      <isil:IsiGetQueryResult>\r\n         <!--Optional:-->\r\n         <isil:queryId>TEST</isil:queryId>\r\n         <!--Optional:-->\r\n         <isil:limit>10</isil:limit>\r\n         <!--Optional:-->\r\n         <isil:totalRecordCount>1</isil:totalRecordCount>\r\n         <!--Optional:-->\r\n         <isil:modifiedCriteria>\r\n            <!--Zero or more repetitions:-->\r\n\r\n            <isil:IsiWsCriteria>\r\n               <!--Optional:-->\r\n               <isil:IsiCode>I_UTI_MATRICULERH</isil:IsiCode>\r\n               <!--Optional:-->\r\n               <isil:IsiId>71065,60140</isil:IsiId>\r\n               <!--Optional:-->\r\n               <isil:IsiLibelle>Matricule RH</isil:IsiLibelle>\r\n               <!--Optional:-->\r\n               <isil:IsiTypeOp>EQUAL</isil:IsiTypeOp>\r\n               <!--Optional:-->\r\n               <isil:IsiValue>7710</isil:IsiValue>\r\n            </isil:IsiWsCriteria>\r\n\r\n         </isil:modifiedCriteria>\r\n      </isil:IsiGetQueryResult>\r\n   </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iws.sdis13.fr/IsilogWebSystem/WebServices/IsiQueryService.svc",
+					"protocol": "https",
+					"host": [
+						"iws",
+						"sdis13",
+						"fr"
+					],
+					"path": [
+						"IsilogWebSystem",
+						"WebServices",
+						"IsiQueryService.svc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

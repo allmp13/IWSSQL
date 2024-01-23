@@ -1,0 +1,47 @@
+indexof(string(outputs('New_Request')?['body']),'DOS')
+string(outputs('New_Request')?['body'])
+
+int(indexof(string(outputs('New_Request')?['body']),'DOS'))
+add(int(indexof(string(outputs('New_Request')?['body']),'DOS')),10)
+
+substring(string(outputs('New_Request')?['body']),int(indexof(string(outputs('New_Request')?['body']),'DOS')),10)
+
+
+
+
+//*[local-name()='IsiWsDataField'][117]/IsiValue/text()
+
+
+/soap:Envelope/soap:Body/*/*
+
+
+//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiAddAndGetCallResponse"]/*[local-name()="IsiAddAndGetCallResult"]/*[local-name()="IsiWsResponse"]/*[local-name()="Statut"]/text()
+
+xpath(outputs('Compose'),'//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiAddAndGetCallResponse"]/*[local-name()="IsiAddAndGetCallResult"]/*[local-name()="IsiWsResponse"]/*[local-name()="Statut"]/text()')
+
+//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiAddAndGetCallResponse"]/*[local-name()="IsiAddAndGetCallResult"]/*[local-name()="IsiWsResponse"]/*[local-name()="Objects"]/*[local-name()="anyType"]/*[local-name()="IsiFields"]/*[local-name()="IsiWsDataField"][117]/*[local-name()="IsiValue"]/text()
+
+xpath(xml(variables('MESSAGE')),'//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiAddAndGetCallResponse"]/*[local-name()="IsiAddAndGetCallResult"]/*[local-name()="IsiWsResponse"]/*[local-name()="Objects"]/*[local-name()="anyType"]/*[local-name()="IsiFields"]/*[local-name()="IsiWsDataField"][117]/*[local-name()="IsiValue"]/text()')
+
+
+substring(string(outputs('New_Request')?['body']),int(indexof(string(outputs('New_Request')?['body']),'DOS')),10)
+
+
+replace(string(outputs('New_Request')?['body']),'&lt;','<')
+
+replace(outputs('Compose_2'),'&gt;','>')
+
+replace(outputs('Compose_3'),'<?xml version="1.0" encoding="utf-16"?>','')
+
+replace(replace(string(outputs('New_Request')?['body']),'&lt;','<'),'&gt;','>')
+
+replace(replace(replace(string(outputs('New_Request')?['body']),'&lt;','<'),'&gt;','>'),'<?xml version="1.0" encoding="utf-16"?>','')
+
+xpath(xml(replace(replace(replace(string(outputs('New_Request')?['body']),'&lt;','<'),'&gt;','>'),'<?xml version="1.0" encoding="utf-16"?>','')),'//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiAddAndGetCallResponse"]/*[local-name()="IsiAddAndGetCallResult"]/*[local-name()="IsiWsResponse"]/*[local-name()="Objects"]/*[local-name()="anyType"]/*[local-name()="IsiFields"]/*[local-name()="IsiWsDataField"][117]/*[local-name()="IsiValue"]/text()')
+
+
+
+//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiGetQueryResultResponse"]/*[local-name()="IsiGetQueryResultResult"]/*[local-name()="Objects"]/*[local-name()="anyType"]/*[local-name()="IsiWsEntity"]/*[local-name()="IsiFields"]/*[local-name()="IsiWsDataField"]/*[local-name()="IsiValue"]/text()
+
+
+//*[local-name()="Envelope"]/*[local-name()="Body"]/*[local-name()="IsiGetQueryResultResponse"]/*[local-name()="IsiGetQueryResultResult"]/*[local-name()="Objects"]/*[local-name()="anyType"]/*[local-name()="IsiWsEntity"]/*[local-name()="IsiFields"]/*[local-name()="IsiWsDataField"][1]/*[local-name()="IsiValue"]/text()

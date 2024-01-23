@@ -3,3 +3,5 @@ where H.D_ARCHIVE IS NULL and H.C_FONCTION like '50%' and U.C_UTIL=H.C_UTIL and 
 
 select * from HABILITATIONS_TYPE
 
+select * from suiteisilog.CARACOBJ
+

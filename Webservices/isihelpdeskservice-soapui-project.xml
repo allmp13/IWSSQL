@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5e0e5fc8-1e44-4b76-bafe-72e4f1ee9a02" activeEnvironment="Default" name="isihelpdeskservice" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="36c4f533-2592-4acd-98e2-867ee6abf9ed" wsaVersion="NONE" name="IsiHelpDeskServiceSoap12" type="wsdl" bindingName="{http://isilog.fr}IsiHelpDeskServiceSoap12" soapVersion="1_2" anonymous="optional" definition="https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint></con:endpoints><con:operation id="8b572204-a802-42ff-b932-24beae306d2e" isOneWay="false" action="http://isilog.fr/IsiAddAction" name="IsiAddAction" bindingOperationName="IsiAddAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5db6ebd3-7501-4a5d-a996-f2776e92aa0b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiAddAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiAddAction>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiAddActionRequest"/></con:call></con:operation><con:operation id="4e7c16ef-36c8-4366-99c1-3bde2c366499" isOneWay="false" action="http://isilog.fr/IsiAddAndGetAction" name="IsiAddAndGetAction" bindingOperationName="IsiAddAndGetAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="21d41973-fe2e-484a-89d2-090dcbf6c239" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiAddAndGetAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiAddAndGetAction>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiAddAndGetActionRequest"/></con:call></con:operation><con:operation id="88591bdc-f718-449e-83c4-fd5a2f472194" isOneWay="false" action="http://isilog.fr/IsiAddAndGetCall" name="IsiAddAndGetCall" bindingOperationName="IsiAddAndGetCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="567d96bf-ab55-4030-9aa5-9277dfae825a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiAddAndGetCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiAddAndGetCall>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiAddAndGetCallRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="534e7321-5639-43e0-96bb-4592de132eca" isOneWay="false" action="http://isilog.fr/IsiAddCall" name="IsiAddCall" bindingOperationName="IsiAddCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4900222b-b7b5-4935-abaf-cbcb870a91d0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiAddCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiAddCall>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiAddCallRequest"/></con:call></con:operation><con:operation id="6984ea3e-f332-4c6e-83c0-43d94be96aac" isOneWay="false" action="http://isilog.fr/IsiCloseWithoutResponse" name="IsiCloseWithoutResponse" bindingOperationName="IsiCloseWithoutResponse" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="97b15ede-bd1e-4a80-80a4-c4458b64f5a5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiCloseWithoutResponse>\r
+         <!--Optional:-->\r
+         <isil:codeNature>?</isil:codeNature>\r
+         <!--Optional:-->\r
+         <isil:nbJoursEcheance>?</isil:nbJoursEcheance>\r
+      </isil:IsiCloseWithoutResponse>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiCloseWithoutResponseRequest"/></con:call></con:operation><con:operation id="4f57f12c-bbdd-4e39-a3ef-b9a51014d786" isOneWay="false" action="http://isilog.fr/IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" bindingOperationName="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="523fe809-1fae-4043-b6cc-8d0693af032b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident>\r
+         <!--Optional:-->\r
+         <isil:nomProcSQL>?</isil:nomProcSQL>\r
+         <!--Optional:-->\r
+         <isil:codeNature>?</isil:codeNature>\r
+      </isil:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentRequest"/></con:call></con:operation><con:operation id="5f0ff5da-17e8-4055-800d-de41e83e3a01" isOneWay="false" action="http://isilog.fr/IsiRealizeProceduralAction" name="IsiRealizeProceduralAction" bindingOperationName="IsiRealizeProceduralAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="76af52a1-80b1-4c9a-9914-6989b5bb30ae" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiRealizeProceduralAction>\r
+         <!--Optional:-->\r
+         <isil:codeNature>?</isil:codeNature>\r
+         <!--Optional:-->\r
+         <isil:nbJoursEcheance>?</isil:nbJoursEcheance>\r
+         <!--Optional:-->\r
+         <isil:codeTypeActionARealiser>?</isil:codeTypeActionARealiser>\r
+         <!--Optional:-->\r
+         <isil:reponseActionARealiser>?</isil:reponseActionARealiser>\r
+      </isil:IsiRealizeProceduralAction>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiRealizeProceduralActionRequest"/></con:call></con:operation><con:operation id="156395ca-e2f0-43f8-9fe9-6a24bf2f5c34" isOneWay="false" action="http://isilog.fr/IsiReopenUnfrozenCall" name="IsiReopenUnfrozenCall" bindingOperationName="IsiReopenUnfrozenCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="67ec7b86-7b0d-4ecd-a8ab-2592233b9659" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiReopenUnfrozenCall>\r
+         <!--Optional:-->\r
+         <isil:nature>?</isil:nature>\r
+      </isil:IsiReopenUnfrozenCall>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiReopenUnfrozenCallRequest"/></con:call></con:operation><con:operation id="6e8d7a8c-ea41-4943-a898-8815010421c4" isOneWay="false" action="http://isilog.fr/IsiUpdateAction" name="IsiUpdateAction" bindingOperationName="IsiUpdateAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="17e380dd-d3b9-4831-961c-a5d591a32707" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiUpdateAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiUpdateAction>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiUpdateActionRequest"/></con:call></con:operation><con:operation id="4122c3cb-1e27-4260-8707-6f3cd1756ab0" isOneWay="false" action="http://isilog.fr/IsiUpdateAndGetAction" name="IsiUpdateAndGetAction" bindingOperationName="IsiUpdateAndGetAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a7f9496-953d-4582-98b0-f6eddc58a5a8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiUpdateAndGetAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiUpdateAndGetAction>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiUpdateAndGetActionRequest"/></con:call></con:operation><con:operation id="cf95eda2-2ca2-4e65-8d0d-c68817fe7e60" isOneWay="false" action="http://isilog.fr/IsiUpdateAndGetCall" name="IsiUpdateAndGetCall" bindingOperationName="IsiUpdateAndGetCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5c30cb99-8622-4d04-bdf3-c5aba42affa0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiUpdateAndGetCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiUpdateAndGetCall>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiUpdateAndGetCallRequest"/></con:call></con:operation><con:operation id="e9b7a5f1-16a7-49b7-a2dd-ae45e7bdbb62" isOneWay="false" action="http://isilog.fr/IsiUpdateCall" name="IsiUpdateCall" bindingOperationName="IsiUpdateCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a8fccc5d-ae05-402c-9d94-5eb9a43abcb5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:isil="http://isilog.fr">\r
+   <soap:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <isil:IsiUpdateCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiUpdateCall>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiHelpDeskServiceSoap/IsiUpdateCallRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4e7aed87-9e58-49da-8ce0-75594c6cbd9c" wsaVersion="NONE" name="IsiHelpDeskServiceSoap" type="wsdl" bindingName="{http://isilog.fr}IsiHelpDeskServiceSoap" soapVersion="1_1" anonymous="optional" definition="https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx?WSDL"><con:part><con:url>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://isilog.fr" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://isilog.fr" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>310.0.0.0</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://isilog.fr">
+      <s:element name="IsiReopenUnfrozenCall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nature" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiReopenUnfrozenCallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiReopenUnfrozenCallResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiWsAuthHeader" type="tns:IsiWsAuthHeader"/>
+      <s:complexType name="IsiWsAuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiLogin" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiPassword" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiCallProgram" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiDataBaseID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiAnnuaire" type="s:string"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:element name="IsiRealizeProceduralAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codeNature" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="nbJoursEcheance" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="codeTypeActionARealiser" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="reponseActionARealiser" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiRealizeProceduralActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiRealizeProceduralActionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiCloseWithoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codeNature" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="nbJoursEcheance" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiCloseWithoutResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiCloseWithoutResponseResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nomProcSQL" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="codeNature" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddCall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiCallEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IsiWsEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiFields" type="tns:ArrayOfIsiWsDataField"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIsiWsDataField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IsiWsDataField" nillable="true" type="tns:IsiWsDataField"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IsiWsDataField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiField" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="IsiValue" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsiAddCallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiAddCallResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddAndGetCall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiCallEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddAndGetCallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiAddAndGetCallResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateCall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiCallEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateCallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiUpdateCallResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateAndGetCall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiCallEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateAndGetCallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiUpdateAndGetCallResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiActionEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiAddActionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddAndGetAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiActionEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiAddAndGetActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiAddAndGetActionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiActionEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiUpdateActionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateAndGetAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pIsiActionEntity" type="tns:IsiWsEntity"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsiUpdateAndGetActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsiUpdateAndGetActionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsiReopenUnfrozenCallSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiReopenUnfrozenCall"/>
+  </wsdl:message>
+  <wsdl:message name="IsiReopenUnfrozenCallSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiReopenUnfrozenCallResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiReopenUnfrozenCallIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiRealizeProceduralActionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiRealizeProceduralAction"/>
+  </wsdl:message>
+  <wsdl:message name="IsiRealizeProceduralActionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiRealizeProceduralActionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiRealizeProceduralActionIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiCloseWithoutResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiCloseWithoutResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiCloseWithoutResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiCloseWithoutResponseResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiCloseWithoutResponseIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident"/>
+  </wsdl:message>
+  <wsdl:message name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddCallSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiAddCall"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddCallSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiAddCallResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddCallIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddAndGetCallSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiAddAndGetCall"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddAndGetCallSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiAddAndGetCallResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddAndGetCallIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateCallSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiUpdateCall"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateCallSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiUpdateCallResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateCallIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateAndGetCallSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiUpdateAndGetCall"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateAndGetCallSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiUpdateAndGetCallResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateAndGetCallIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddActionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiAddAction"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddActionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiAddActionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddActionIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddAndGetActionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiAddAndGetAction"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddAndGetActionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiAddAndGetActionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiAddAndGetActionIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateActionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiUpdateAction"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateActionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiUpdateActionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateActionIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateAndGetActionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsiUpdateAndGetAction"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateAndGetActionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsiUpdateAndGetActionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsiUpdateAndGetActionIsiWsAuthHeader">
+    <wsdl:part name="IsiWsAuthHeader" element="tns:IsiWsAuthHeader"/>
+  </wsdl:message>
+  <wsdl:portType name="IsiHelpDeskServiceSoap">
+    <wsdl:operation name="IsiReopenUnfrozenCall">
+      <wsdl:documentation><![CDATA[Web Service permettant de passer les appels en fin de gel au status 'réouvert' pour la nature spécifiée: <ul><LI>Paramètre "nature" : Le code de la nature de l'appel (par exemple INC, si vide alors toutes).</li><LI>Ce Webservice n'est pas soumis à licence.</LI></ul>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiReopenUnfrozenCallSoapIn"/>
+      <wsdl:output message="tns:IsiReopenUnfrozenCallSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiRealizeProceduralAction">
+      <wsdl:documentation><![CDATA[Web Service permettant de réaliser une action procédurale dont le type et la réponse sont passés en paramètre, pour les appels de la nature est passée en paramètre.<UL><LI>Paramètre "codeNature" : Le code de la nature de l'appel (par exemple FAQ).</li><LI>Paramètre "nbJoursEcheance" : Le nombre de jours avant échéance (Par exemple : 7).</LI><LI>Paramètre "codeTypeActionARealiser" : Code type d'action à réaliser (par exemple : WFW_PTCONTROLE_SYS).</LI><LI>Paramètre "codeTypeActionARealiser" : Réponse fournie à la réalisation de l'action (par exemple : A réviser).</LI><LI>Ce Webservice n'est pas soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiRealizeProceduralActionSoapIn"/>
+      <wsdl:output message="tns:IsiRealizeProceduralActionSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiCloseWithoutResponse">
+      <wsdl:documentation><![CDATA[Web Service permettant de clôturer administrativement des appels sans réponse au questionnaire de satisfaction dont la nature est passée en paramètre.<UL><LI>Paramètre "codeNature" : Le code de la nature de l'appel (par exemple FAQ).</li><LI>Paramètre "nbJoursEcheance" : Le nombre de jours minimum après clôture technique (Par exemple : 7).</LI><LI>Ce Webservice n'est pas soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiCloseWithoutResponseSoapIn"/>
+      <wsdl:output message="tns:IsiCloseWithoutResponseSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident">
+      <wsdl:documentation><![CDATA[Calcul de la moyenne des notes de satisfaction des incidents comportant des questionnaires de satisfaction et suivant la réponse réouvre ou clos les appels concernés.<UL><LI>Paramètre "nomProcSQL" : Nom de la procédure basée à appeler pour le calcul de la moyenne (Par exemple : MOYENNESATISFACTION).</LI><LI>Paramètre "codeNature" : Code de la nature des dossiers à traiter (Par exemple : INC).</LI><LI>Ce Webservice n'est pas soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentSoapIn"/>
+      <wsdl:output message="tns:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddCall">
+      <wsdl:documentation><![CDATA[Permet d'ajouter un appel.   <UL><LI>Paramètre "pIsiCallEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table APPEL, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiAddCallSoapIn"/>
+      <wsdl:output message="tns:IsiAddCallSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAndGetCall">
+      <wsdl:documentation><![CDATA[Permet d'ajouter un appel. En retour du WS, on récupère les informations de l'appel ajouté dans un  objet du même type que celui passé en paramètre et qui contiendra toutes les valeurs de colonnes de la table APPEL après l'insertion.   <UL><LI>Paramètre "pIsiCallEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table APPEL, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiAddAndGetCallSoapIn"/>
+      <wsdl:output message="tns:IsiAddAndGetCallSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateCall">
+      <wsdl:documentation><![CDATA[Permet de modifier un appel.   <UL><LI>Paramètre "pIsiCallEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table APPEL, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiUpdateCallSoapIn"/>
+      <wsdl:output message="tns:IsiUpdateCallSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAndGetCall">
+      <wsdl:documentation><![CDATA[Permet de modifier un appel. En retour du WS, on récupère les informations de l'appel modifié dans un  objet du même type que celui passé en paramètre et qui contiendra toutes les valeurs de colonnes de la table APPEL après l'insertion.   <UL><LI>Paramètre "pIsiCallEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table APPEL, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiUpdateAndGetCallSoapIn"/>
+      <wsdl:output message="tns:IsiUpdateAndGetCallSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAction">
+      <wsdl:documentation><![CDATA[Permet d'ajouter une action.   <UL><LI>Paramètre "pIsiActionEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table ACTIONS, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiAddActionSoapIn"/>
+      <wsdl:output message="tns:IsiAddActionSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAndGetAction">
+      <wsdl:documentation><![CDATA[Permet d'ajouter une action. En retour du WS, on récupère les informations de l'action ajoutée dans un  objet du même type que celui passé en paramètre et qui contiendra toutes les valeurs de colonnes de la table ACTIONS après l'insertion.   <UL><LI>Paramètre "pIsiActionEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table ACTIONS, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiAddAndGetActionSoapIn"/>
+      <wsdl:output message="tns:IsiAddAndGetActionSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAction">
+      <wsdl:documentation><![CDATA[Permet de modifier une action.   <UL><LI>Paramètre "pIsiActionEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table ACTIONS, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiUpdateActionSoapIn"/>
+      <wsdl:output message="tns:IsiUpdateActionSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAndGetAction">
+      <wsdl:documentation><![CDATA[Permet de modifier une action. En retour du WS, on récupère les informations de l'action modifiée dans un  objet du même type que celui passé en paramètre et qui contiendra toutes les valeurs de colonnes de la table ACTIONS après l'insertion.   <UL><LI>Paramètre "pIsiActionEntity" : Il s'agit d'un objet composé d'un ensemble de couples : code de la colonne de la table ACTIONS, valeur de la colonne.</LI><LI>Ce Webservice est soumis à licence.</LI></UL>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:IsiUpdateAndGetActionSoapIn"/>
+      <wsdl:output message="tns:IsiUpdateAndGetActionSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IsiHelpDeskServiceSoap" type="tns:IsiHelpDeskServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="IsiReopenUnfrozenCall">
+      <soap:operation soapAction="http://isilog.fr/IsiReopenUnfrozenCall" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiReopenUnfrozenCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiRealizeProceduralAction">
+      <soap:operation soapAction="http://isilog.fr/IsiRealizeProceduralAction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiRealizeProceduralActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiCloseWithoutResponse">
+      <soap:operation soapAction="http://isilog.fr/IsiCloseWithoutResponse" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiCloseWithoutResponseIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident">
+      <soap:operation soapAction="http://isilog.fr/IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddCall">
+      <soap:operation soapAction="http://isilog.fr/IsiAddCall" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiAddCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAndGetCall">
+      <soap:operation soapAction="http://isilog.fr/IsiAddAndGetCall" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiAddAndGetCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateCall">
+      <soap:operation soapAction="http://isilog.fr/IsiUpdateCall" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiUpdateCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAndGetCall">
+      <soap:operation soapAction="http://isilog.fr/IsiUpdateAndGetCall" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiUpdateAndGetCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAction">
+      <soap:operation soapAction="http://isilog.fr/IsiAddAction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiAddActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAndGetAction">
+      <soap:operation soapAction="http://isilog.fr/IsiAddAndGetAction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiAddAndGetActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAction">
+      <soap:operation soapAction="http://isilog.fr/IsiUpdateAction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiUpdateActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAndGetAction">
+      <soap:operation soapAction="http://isilog.fr/IsiUpdateAndGetAction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:IsiUpdateAndGetActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IsiHelpDeskServiceSoap12" type="tns:IsiHelpDeskServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="IsiReopenUnfrozenCall">
+      <soap12:operation soapAction="http://isilog.fr/IsiReopenUnfrozenCall" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiReopenUnfrozenCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiRealizeProceduralAction">
+      <soap12:operation soapAction="http://isilog.fr/IsiRealizeProceduralAction" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiRealizeProceduralActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiCloseWithoutResponse">
+      <soap12:operation soapAction="http://isilog.fr/IsiCloseWithoutResponse" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiCloseWithoutResponseIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident">
+      <soap12:operation soapAction="http://isilog.fr/IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncidentIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddCall">
+      <soap12:operation soapAction="http://isilog.fr/IsiAddCall" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiAddCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAndGetCall">
+      <soap12:operation soapAction="http://isilog.fr/IsiAddAndGetCall" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiAddAndGetCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateCall">
+      <soap12:operation soapAction="http://isilog.fr/IsiUpdateCall" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiUpdateCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAndGetCall">
+      <soap12:operation soapAction="http://isilog.fr/IsiUpdateAndGetCall" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiUpdateAndGetCallIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAction">
+      <soap12:operation soapAction="http://isilog.fr/IsiAddAction" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiAddActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiAddAndGetAction">
+      <soap12:operation soapAction="http://isilog.fr/IsiAddAndGetAction" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiAddAndGetActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAction">
+      <soap12:operation soapAction="http://isilog.fr/IsiUpdateAction" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiUpdateActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsiUpdateAndGetAction">
+      <soap12:operation soapAction="http://isilog.fr/IsiUpdateAndGetAction" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+        <soap12:header message="tns:IsiUpdateAndGetActionIsiWsAuthHeader" part="IsiWsAuthHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IsiHelpDeskService">
+    <wsdl:documentation>310.0.0.0</wsdl:documentation>
+    <wsdl:port name="IsiHelpDeskServiceSoap" binding="tns:IsiHelpDeskServiceSoap">
+      <soap:address location="https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="IsiHelpDeskServiceSoap12" binding="tns:IsiHelpDeskServiceSoap12">
+      <soap12:address location="https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint></con:endpoints><con:operation id="3828209f-9fe5-4267-a245-5e56137d88a1" isOneWay="false" action="http://isilog.fr/IsiAddAction" name="IsiAddAction" bindingOperationName="IsiAddAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="944da4c6-08d9-4b04-b43e-46e083a1b315" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiAddAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiAddAction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiAddAction"/></con:call></con:operation><con:operation id="2a41f883-562d-4f2f-a99c-7d78b8478c6a" isOneWay="false" action="http://isilog.fr/IsiAddAndGetAction" name="IsiAddAndGetAction" bindingOperationName="IsiAddAndGetAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="13018ac5-0a0a-42eb-ba3e-bdac3b19335a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiAddAndGetAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiAddAndGetAction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiAddAndGetAction"/></con:call></con:operation><con:operation id="d81c39bc-eaab-4ad5-af02-e0117d0617ed" isOneWay="false" action="http://isilog.fr/IsiAddAndGetCall" name="IsiAddAndGetCall" bindingOperationName="IsiAddAndGetCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fe405fbf-f500-487b-acd5-62f298bf9595" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>DEMO</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword></isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram></isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>IWSREPRISE</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire></isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiAddAndGetCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>C_OBJETSERVICE</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>1630574</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+               <isil:IsiWsDataField>
+                  <!--Optional:-->
+                  <isil:IsiField>DE_SYMPAPPEL</isil:IsiField>
+                  <!--Optional:-->
+                  <isil:IsiValue>TEST DE CREATION !!!!</isil:IsiValue>
+               </isil:IsiWsDataField>
+
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiAddAndGetCall>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiAddAndGetCall"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8999770a-384f-4edc-94b4-a19400383ca9" isOneWay="false" action="http://isilog.fr/IsiAddCall" name="IsiAddCall" bindingOperationName="IsiAddCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5de3ac4e-ea3d-4d23-84e2-f25f02a7f0c7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiAddCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiAddCall>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiAddCall"/></con:call></con:operation><con:operation id="3302e15d-5e47-44e5-95da-1ab78f298749" isOneWay="false" action="http://isilog.fr/IsiCloseWithoutResponse" name="IsiCloseWithoutResponse" bindingOperationName="IsiCloseWithoutResponse" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f0b15150-0499-470b-ab7a-cffce444e902" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiCloseWithoutResponse>\r
+         <!--Optional:-->\r
+         <isil:codeNature>?</isil:codeNature>\r
+         <!--Optional:-->\r
+         <isil:nbJoursEcheance>?</isil:nbJoursEcheance>\r
+      </isil:IsiCloseWithoutResponse>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiCloseWithoutResponse"/></con:call></con:operation><con:operation id="f11c9fe7-c33b-43e3-84df-dd82fcef9592" isOneWay="false" action="http://isilog.fr/IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" name="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" bindingOperationName="IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="af1f8211-2ffb-48e1-9c7c-0297bf93d920" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident>\r
+         <!--Optional:-->\r
+         <isil:nomProcSQL>?</isil:nomProcSQL>\r
+         <!--Optional:-->\r
+         <isil:codeNature>?</isil:codeNature>\r
+      </isil:IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiEvalAverageSatisfactionNoteAndReopenOrCloseIncident"/></con:call></con:operation><con:operation id="e192cb2d-b40a-4ec2-bd67-305090df9295" isOneWay="false" action="http://isilog.fr/IsiRealizeProceduralAction" name="IsiRealizeProceduralAction" bindingOperationName="IsiRealizeProceduralAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1c676187-3d4b-459b-9d48-f1758514085c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiRealizeProceduralAction>\r
+         <!--Optional:-->\r
+         <isil:codeNature>?</isil:codeNature>\r
+         <!--Optional:-->\r
+         <isil:nbJoursEcheance>?</isil:nbJoursEcheance>\r
+         <!--Optional:-->\r
+         <isil:codeTypeActionARealiser>?</isil:codeTypeActionARealiser>\r
+         <!--Optional:-->\r
+         <isil:reponseActionARealiser>?</isil:reponseActionARealiser>\r
+      </isil:IsiRealizeProceduralAction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiRealizeProceduralAction"/></con:call></con:operation><con:operation id="7f820d1b-488d-486a-adff-4a2b437159ad" isOneWay="false" action="http://isilog.fr/IsiReopenUnfrozenCall" name="IsiReopenUnfrozenCall" bindingOperationName="IsiReopenUnfrozenCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="94b9727b-52cf-4007-ac3f-3fda6356c53f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiReopenUnfrozenCall>\r
+         <!--Optional:-->\r
+         <isil:nature>?</isil:nature>\r
+      </isil:IsiReopenUnfrozenCall>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiReopenUnfrozenCall"/></con:call></con:operation><con:operation id="65a0422b-f75a-46f7-b9f5-5afacad19823" isOneWay="false" action="http://isilog.fr/IsiUpdateAction" name="IsiUpdateAction" bindingOperationName="IsiUpdateAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7efbc80-0ea3-4a92-801c-1628e4890d74" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiUpdateAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiUpdateAction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiUpdateAction"/></con:call></con:operation><con:operation id="761e32e7-22c2-4b38-b169-7e7f11c95a43" isOneWay="false" action="http://isilog.fr/IsiUpdateAndGetAction" name="IsiUpdateAndGetAction" bindingOperationName="IsiUpdateAndGetAction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="138ba262-b87b-4cc7-8273-e664a5a73786" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiUpdateAndGetAction>\r
+         <!--Optional:-->\r
+         <isil:pIsiActionEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiActionEntity>\r
+      </isil:IsiUpdateAndGetAction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiUpdateAndGetAction"/></con:call></con:operation><con:operation id="a78716ae-9033-4705-96d9-b2268726485a" isOneWay="false" action="http://isilog.fr/IsiUpdateAndGetCall" name="IsiUpdateAndGetCall" bindingOperationName="IsiUpdateAndGetCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="49275260-eaf6-43c9-8b2e-ce8734891949" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiUpdateAndGetCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiUpdateAndGetCall>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiUpdateAndGetCall"/></con:call></con:operation><con:operation id="49afb588-0898-4a54-8401-f34922821b15" isOneWay="false" action="http://isilog.fr/IsiUpdateCall" name="IsiUpdateCall" bindingOperationName="IsiUpdateCall" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="edc29c74-a470-403a-bb46-30ac76aa8206" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://iws.sdis13.fr/IsilogWebSystem/WebServices/isihelpdeskservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:isil="http://isilog.fr">\r
+   <soapenv:Header>\r
+      <isil:IsiWsAuthHeader>\r
+         <!--Optional:-->\r
+         <isil:IsiLogin>?</isil:IsiLogin>\r
+         <!--Optional:-->\r
+         <isil:IsiPassword>?</isil:IsiPassword>\r
+         <!--Optional:-->\r
+         <isil:IsiCallProgram>?</isil:IsiCallProgram>\r
+         <!--Optional:-->\r
+         <isil:IsiDataBaseID>?</isil:IsiDataBaseID>\r
+         <!--Optional:-->\r
+         <isil:IsiAnnuaire>?</isil:IsiAnnuaire>\r
+      </isil:IsiWsAuthHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <isil:IsiUpdateCall>\r
+         <!--Optional:-->\r
+         <isil:pIsiCallEntity>\r
+            <!--Optional:-->\r
+            <isil:IsiFields>\r
+               <!--Zero or more repetitions:-->\r
+               <isil:IsiWsDataField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiField>?</isil:IsiField>\r
+                  <!--Optional:-->\r
+                  <isil:IsiValue>?</isil:IsiValue>\r
+               </isil:IsiWsDataField>\r
+            </isil:IsiFields>\r
+         </isil:pIsiCallEntity>\r
+      </isil:IsiUpdateCall>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://isilog.fr/IsiUpdateCall"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
