@@ -1,6 +1,6 @@
 /*
-
-SRVMSSQL-M
+Serveur:
+           SRVMSSQL-M
 
 */
 
