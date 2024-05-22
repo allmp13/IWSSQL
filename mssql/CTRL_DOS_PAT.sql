@@ -1,0 +1,1 @@
+select S.L_REF from suiteisilog.OBJET O inner join suiteisilog.CATALOGUE S on O.C_REF= S.C_REF wHERE O.C_NATURE='SERVICE' AND O.C_REF like 'P%' AND O.D_ARCHIVE IS NULL

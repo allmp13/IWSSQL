@@ -1,0 +1,17 @@
+SELECT  [code_organigramme]
+      ,[orgsrv_datedebut]
+      ,[orgsrv_datefin]
+      ,[libelle_organigramme]
+      ,[code_service]
+      ,[libcourt_service]
+      ,[liblong_service]
+      ,[sigle]
+      ,[code_collectivite_srv]
+      ,[libelle_collectivite_srv]
+      ,[code_service_parent]
+      ,[niveau]
+      ,[code_structure]
+      ,[libelle_structure]
+
+  FROM [ODS_PROD].[dbo].[BL_ORGANIGRAMME]
+  where code_structure = '' and orgsrv_datefin = '31/12/2099' --and sigle='0309'
