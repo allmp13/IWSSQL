@@ -20,4 +20,4 @@ SELECT  [Libelle_Habi_Type]
       ,[clef_unique]
   FROM [GSIC_LGME].[dbo].[HABILITATION]
   
-  WHERE Environnement like 'HAB%'
+  WHERE Environnement like 'HAB TEST' 
